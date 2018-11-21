@@ -38,6 +38,14 @@ public class Unit : MonoBehaviour {
     }
     #endregion
 
+    #region Def 프로퍼티
+    private int def;
+    public int Def
+    {
+        get { return def; }
+        set { def = value; }
+    }
+    #endregion
 
     protected int Lev = 1;
     protected int MaxLev = 18;

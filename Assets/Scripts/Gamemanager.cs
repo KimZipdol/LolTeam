@@ -47,19 +47,25 @@ public class Gamemanager : MonoBehaviour
     public int soldireMaxCount;
     public List<GameObject> SoldireList = new List<GameObject>();
 
+    //상점 데이터배이스 딕셔너리
     public Dictionary<string, ItemInfoMation> iteminfodic = new Dictionary<string, ItemInfoMation>();
+    //상점 아이템 구입시 
+    public Dictionary<string, ItemInfoMation> Inventorydic = new Dictionary<string, ItemInfoMation>();
+
+
     public Sprite[] ITEMIMGS;
     //0 = 검 , 1 = 도끼 , 2 = 갑옷 , 3 = 반지 , 4 = 포션 , 5 = 장갑
     public Text[] ItemText;
+    public List<Image> InvenSlot;
     public Transform itemText_Panel;
     public Image item_Paenl_img;
-    public Image item_temp;
-
 
 
     private Coroutine moneysecond;
 
+    public List<ItemInfoMation> inventoryData = new List<ItemInfoMation>();
 
+    public PlayerController player;
 
     public void ItemInfo(ItemInfoMation info)
     {
@@ -73,61 +79,74 @@ public class Gamemanager : MonoBehaviour
 
     private void Start()
     {
-        
+        InvenSlot.AddRange(GameObject.Find("Champ_Inventory").GetComponentsInChildren<Image>());
+        InvenSlot.RemoveAt(0);
         itemText_Panel.gameObject.SetActive(false);
         gameState = GameState.Start;
         moneysecond = StartCoroutine(MoneyCorutine());
 
         ObjectfullInit();
 
-        #region 아이템 딕셔너리 Add
+        #region 아이템 상점 아이템 데이터베이스 Adds
         iteminfodic.Add(
-            ITEMIMGS[0].name, 
+            ITEMIMGS[0].name,                                         //  아이템 이름 키값          
             new ItemInfoMation(
-            ItemKind.WEAPON,
-            "검",
-            "이가 다 낡아 빠진 Sword 구입하면 후회할거야...",
-            ITEMIMGS[0], 10));
+            ItemKind.WEAPON,                                          //  아이템 종류 = 무기
+            "검",                                                     //   아이템 이름
+            "이가 다 낡아 빠진 Sword 구입하면 후회할거야...",              //   아이템 설명 
+            ITEMIMGS[0],                                              //   아이템 스프라이트 
+            7,                                                        //   아이템 챔피언 능력상승치
+            10));                                                     //   아이템 구입가격
 
         iteminfodic.Add(
-            ITEMIMGS[1].name,
+            ITEMIMGS[1].name,                                        //  아이템 이름 키값           
             new ItemInfoMation(
-            ItemKind.WEAPON,
-            "도끼",
-            "이가 다 낡아 빠진 Axe 구입하면 후회할거야...",
-            ITEMIMGS[1], 20));
+            ItemKind.WEAPON,                                         //  아이템 종류 = 무기
+            "도끼",                                                   //   아이템 이름
+            "이가 다 낡아 빠진 Axe 구입하면 후회할거야...",               //   아이템 설명 
+            ITEMIMGS[1],                                             //   아이템 스프라이트 
+            9,                                                       //   아이템 챔피언 능력상승치
+            20));                                                    //   아이템 구입가격
 
         iteminfodic.Add(
-           ITEMIMGS[2].name,
+           ITEMIMGS[2].name,                                         //  아이템 이름 키값           
            new ItemInfoMation(
-           ItemKind.ARMOR,
-           "갑옷",
-           "구멍이 슝슝 빠져있는 Armor",
-           ITEMIMGS[2], 25));
+           ItemKind.ARMOR,                                           //  아이템 종류 = 무기
+           "갑옷",                                                    //   아이템 이름
+           "구멍이 슝슝 빠져있는 Armor",                                //   아이템 설명 
+           ITEMIMGS[2],                                              //   아이템 스프라이트 
+           8,                                                        //   아이템 챔피언 능력상승치
+           25));                                                     //   아이템 구입가격
 
         iteminfodic.Add(
-           ITEMIMGS[3].name,
+           ITEMIMGS[3].name,                                         //  아이템 이름 키값           
            new ItemInfoMation(
-           ItemKind.ASR,
-           "반지",
-           "아무 능력도 없는 반지...",
-           ITEMIMGS[3], 15));
+           ItemKind.ASR,                                             //  아이템 종류 = 무기
+           "반지",                                                    //   아이템 이름
+           "아무 능력도 없는 반지...",                                  //   아이템 설명 
+           ITEMIMGS[3],                                              //   아이템 스프라이트 
+           3,                                                        //   아이템 챔피언 능력상승치
+           15));                                                     //   아이템 구입가격
 
         iteminfodic.Add(
-           ITEMIMGS[4].name,
+           ITEMIMGS[4].name,                                        //  아이템 이름 키값        
            new ItemInfoMation(
-           ItemKind.POTION,
-           "체력회복약",
-           "체력을 조금 회복해준다.",
-           ITEMIMGS[4], 30));
+           ItemKind.POTION,                                         //  아이템 종류 = 무기
+           "체력회복약",                                              //   아이템 이름
+           "체력을 조금 회복해준다.",                                  //   아이템 설명 
+           ITEMIMGS[4],                                             //   아이템 스프라이트 
+           30,                                                      //   아이템 챔피언 능력상승치
+           30));                                                    //   아이템 구입가격
 
         iteminfodic.Add(
-           ITEMIMGS[5].name,
+           ITEMIMGS[5].name,                                        //  아이템 이름 키값        
            new ItemInfoMation(
-           ItemKind.ARMOR,
-           "장갑",
-           "손이 전혀 방어가 안된다..",
-           ITEMIMGS[5], 12));
+           ItemKind.ARMOR,                                          //  아이템 종류 = 무기
+           "장갑",                                                   //   아이템 이름
+           "손이 전혀 방어가 안된다..",                                //   아이템 설명 
+           ITEMIMGS[5],                                             //   아이템 스프라이트 
+           4,                                                       //   아이템 챔피언 능력상승치
+           12));                                                    //   아이템 구입가격
 
 
 
@@ -174,6 +193,26 @@ public class Gamemanager : MonoBehaviour
         }
         yield return null;
     }
+
+
+    public int InventoryTempIdx()
+    {
+        int idx =0;
+        for (int i = 0; i < InvenSlot.Count; i++)
+        {
+            if (InvenSlot[i].sprite.name == "f")
+            {
+                idx = i;
+                return idx;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return idx;
+    }
+
 
 
 

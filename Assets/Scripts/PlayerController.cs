@@ -12,6 +12,7 @@ public class PlayerController : Unit
         Hp = Maxhp;
         print(Hp);
         Atk = Random.Range(10 * Lev, 20 * Lev);
+        Def = 3;
     }
 
    

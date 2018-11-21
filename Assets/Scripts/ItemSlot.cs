@@ -13,18 +13,20 @@ public class ItemInfoMation
     public string Itemname;             //아이템 이름 
     public string Description;          //아이템 설명
     public Sprite ItemImg;              //아이템 이미지
+    public int itemfoIdx;               //아이템 능력치 하나 오름.
     public int Price;                   //아이템 가격 
 
 
     public ItemInfoMation() { }
 
     public ItemInfoMation(ItemKind itemKind,string itemname,
-        string Description, Sprite itemImg,int Price)
+        string Description, Sprite itemImg, int itemfoIdx ,int Price)
     {
         this.itemkind = itemKind;
         this.Itemname = itemname;
         this.Description = Description;
         this.ItemImg = itemImg;
+        this.itemfoIdx = itemfoIdx;
         this.Price = Price;
     }
 
@@ -61,12 +63,75 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
     {
         Gamemanager.Instance.itemText_Panel.gameObject.SetActive(false);
     }
-
+    static int iCount = 0;
     //클릭햇을때
     public void OnPointerClick(PointerEventData eventData)
     {
-        Gamemanager.Instance.item_temp.sprite = childsprite;
+        if (Gamemanager.Instance.InvenSlot.Count - 1 < iCount) return;
 
+
+        foreach (var item in Gamemanager.Instance.iteminfodic)
+        {
+
+            if (item.Key == childsprite.name)
+            {
+                
+                // Gamemanager.Instance.Inventorydic.Add(childsprite.name, item.Value);
+                if (Gamemanager.Instance.InvenSlot.Count > iCount)
+                {
+                    Gamemanager.Instance.InvenSlot[Gamemanager.Instance.InventoryTempIdx()].sprite = item.Value.ItemImg;
+                    Gamemanager.Instance.inventoryData.Add(item.Value);
+                    ++iCount;
+                    // Debug.Log(iCount);
+
+
+                    if (Gamemanager.Instance.inventoryData
+                        [Gamemanager.Instance.inventoryData.Count - 1].itemkind == ItemKind.WEAPON)
+                    {
+                        Gamemanager.Instance.player.Atk += Gamemanager.Instance.inventoryData
+                        [Gamemanager.Instance.inventoryData.Count - 1].itemfoIdx;
+                    }
+                    else if (Gamemanager.Instance.inventoryData
+                        [Gamemanager.Instance.inventoryData.Count - 1].itemkind == ItemKind.ARMOR)
+                    {
+                        Gamemanager.Instance.player.Def += Gamemanager.Instance.inventoryData
+                        [Gamemanager.Instance.inventoryData.Count - 1].itemfoIdx;
+                    }
+
+
+                    //foreach (var item2 in Gamemanager.Instance.inventoryData)
+                    //{
+                    //    if (item2.itemkind == ItemKind.WEAPON)
+                    //    {
+                    //        Gamemanager.Instance.player.Atk += item2.itemfoIdx;
+                    //        break;
+
+                    //    }
+                    //    else if (item2.itemkind == ItemKind.ARMOR)
+                    //    {
+                    //        Gamemanager.Instance.player.Def += item2.itemfoIdx;
+                    //        break;
+                    //    }
+                    //    else if (item2.itemkind == ItemKind.ASR)
+                    //    {
+
+
+                    //    }
+                    //    else if (item2.itemkind == ItemKind.POTION)
+                    //    {
+
+                    //    }
+
+                    //}
+
+
+                    break;
+                }
+                //Debug.Log(Gamemanager.Instance.Inventorydic[item.Key].Itemname);
+               
+                
+            }
+        }
 
     }
 }
