@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\6. Scripts\ChampStat.cs" />
     <Compile Include="Assets\6. Scripts\Gamemanager.cs" />
+    <Compile Include="Assets\6. Scripts\InvenItemSlot.cs" />
     <Compile Include="Assets\6. Scripts\ItemDatabase.cs" />
     <Compile Include="Assets\6. Scripts\ItemSlot.cs" />
     <Compile Include="Assets\6. Scripts\Picking.cs" />
@@ -83,9 +84,17 @@
     <Compile Include="Assets\7. Imported\UnityChan\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\7. Imported\UnityChan\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\7. Imported\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
     <None Include="Assets\7. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\7. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
     <None Include="Assets\7. Imported\Shared\Shaders\SurfaceShader_VC.shader" />
+    <None Include="Assets\DOTween\readme.txt" />
     <None Include="Assets\7. Imported\UnityChan\license.txt" />
     <None Include="Assets\7. Imported\RainEntertainment\FantasyMonster\FireDemon\readMe.txt" />
     <None Include="Assets\7. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
@@ -315,6 +324,9 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>D:/Jimoon_Kim/Unity_Study/LolTeam/Assets/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

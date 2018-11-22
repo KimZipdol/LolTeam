@@ -57,11 +57,11 @@ public class Picking : MonoBehaviour {
         {
             //걷는 애니메이션을 꺼주고 Idle로 변경
             _Anim.SetBool(HashWalk, _isMove);
-			_Agent.destination = _Player.transform.position;
+            _Agent.destination = _Player.transform.position;
         }
 
-        //오른쪽 마우스 클릭 하는데!           ui를 클릭할떄는 마우스클릭을 막는다.
-        if (Input.GetMouseButtonDown(1) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+        //왼쪽 마우스 클릭 하는데!           ui를 클릭할떄는 마우스클릭을 막는다.
+        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
 
             //마우스위치로 레이를 쏜다.

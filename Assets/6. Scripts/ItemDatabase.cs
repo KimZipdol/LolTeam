@@ -21,11 +21,21 @@ public class ItemDatabase : MonoBehaviour {
             }
             return _instance;
         }
+
+
     }
 
 
-   
+    void Enable()
+    {
 
+        
+    }
+
+
+
+
+   
 
 
 

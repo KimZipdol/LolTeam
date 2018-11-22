@@ -48,11 +48,15 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
     //마우스 포인터가 들어왔을때
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
         foreach (var item in Gamemanager.Instance.iteminfodic)
         {
+            //아이템의 이미지이름과 딕셔너리에 저장되어있는 이미지이름으로 검사    
             if (childsprite.name == item.Value.ItemImg.name)
             {
+                //같은 이미지가 저장되어있다면 아이템 정보 패널 켜준다.
                 Gamemanager.Instance.itemText_Panel.gameObject.SetActive(true);
+                //매니저스크립트의 함수호출
                 Gamemanager.Instance.ItemInfo(item.Value);
             }
         }
@@ -61,9 +65,11 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
     //마우스 포인터가 빠져나왔을때
     public void OnPointerExit(PointerEventData eventData)
     {
+        //아이템 정보 패넣 꺼준다.
         Gamemanager.Instance.itemText_Panel.gameObject.SetActive(false);
     }
-    static int iCount = 0;
+
+    public static int iCount = 0;
     //클릭햇을때
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -73,7 +79,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
         foreach (var item in Gamemanager.Instance.iteminfodic)
         {
 
-            if (item.Key == childsprite.name)
+            if (item.Value.ItemImg == childsprite)
             {
                 
                 // Gamemanager.Instance.Inventorydic.Add(childsprite.name, item.Value);
