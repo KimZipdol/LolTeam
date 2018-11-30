@@ -12,7 +12,8 @@ public class Picking : MonoBehaviour {
 
     public GameObject _hitObject;
 
-    private NavMeshAgent _Agent;
+    [HideInInspector]
+    public NavMeshAgent _Agent;
     private RaycastHit _hit;
     private Vector3 hitPoint;
 
@@ -61,7 +62,7 @@ public class Picking : MonoBehaviour {
         }
 
         //왼쪽 마우스 클릭 하는데!           ui를 클릭할떄는 마우스클릭을 막는다.
-        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(1) /*&& !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()*/)
         {
 
             //마우스위치로 레이를 쏜다.
@@ -77,7 +78,7 @@ public class Picking : MonoBehaviour {
 
                 //클릭한 위치를 저장한다.
                 hitPoint = _hit.point;
-
+               // Debug.Log(hitPoint);
 
                 if (_hitObject.name == "Player")
                 {
@@ -94,18 +95,9 @@ public class Picking : MonoBehaviour {
                 if (_hitObject.gameObject.tag == "Floor")
                 {
                     if (_isClick) return;
+                    moved(_Agent,hitPoint);
 
-                    //이동해라
-                    _isMove = true;
 
-                    //정지해야할 거리를 0으로 초기화
-                    _Agent.stoppingDistance = 0;
-                    //클릭한 위치로 이동한다.
-                    _Agent.destination = hitPoint;
-
-                    //이동할 남은 거리가 있다면 걷는 애니메이션 실행
-                    if (_Agent.remainingDistance >= _Agent.stoppingDistance)
-                        _Anim.SetBool(HashWalk, _isMove);
 
                 }
                 /*
@@ -136,6 +128,22 @@ public class Picking : MonoBehaviour {
 
         }
 
+    }
+
+
+    public void moved(NavMeshAgent _agent , Vector3 p)
+    {
+        //이동해라
+        _isMove = true;
+
+        //정지해야할 거리를 0으로 초기화
+        _agent.stoppingDistance = 0;
+        //클릭한 위치로 이동한다.
+        _agent.destination = p;
+
+        //이동할 남은 거리가 있다면 걷는 애니메이션 실행
+        if (_agent.remainingDistance >= _agent.stoppingDistance)
+            _Anim.SetBool(HashWalk, _isMove);
     }
 
 

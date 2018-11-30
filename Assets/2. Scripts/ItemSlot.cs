@@ -39,17 +39,19 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
     public ItemInfoMation iteminfo = new ItemInfoMation();
 
     private Sprite childsprite;
+    private ChampStat champ;
 
     private void Awake()
     {
         childsprite = transform.GetChild(0).GetComponent<Image>().sprite;
+        champ = FindObjectOfType<ChampStat>();
     }
 
     //마우스 포인터가 들어왔을때
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
-        foreach (var item in Gamemanager.Instance.iteminfodic)
+        //상점 데이터배이스 검사 
+        foreach (var item in ItemDatabase.Instance.iteminfodic)
         {
             //아이템의 이미지이름과 딕셔너리에 저장되어있는 이미지이름으로 검사    
             if (childsprite.name == item.Value.ItemImg.name)
@@ -76,7 +78,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
         if (Gamemanager.Instance.InvenSlot.Count - 1 < iCount) return;
 
 
-        foreach (var item in Gamemanager.Instance.iteminfodic)
+        foreach (var item in ItemDatabase.Instance.iteminfodic)
         {
 
             if (item.Value.ItemImg == childsprite)
@@ -94,13 +96,13 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
                     if (Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemkind == ItemKind.WEAPON)
                     {
-                        Gamemanager.Instance.player.Atk += Gamemanager.Instance.inventoryData
+                        champ.player.Atk += Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemfoIdx;
                     }
                     else if (Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemkind == ItemKind.ARMOR)
                     {
-                        Gamemanager.Instance.player.Def += Gamemanager.Instance.inventoryData
+                        champ.player.Def += Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemfoIdx;
                     }
 
