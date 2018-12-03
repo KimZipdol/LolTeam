@@ -26,7 +26,7 @@ public class Map_spone : MonoBehaviour {
        // myposimg.transform.position = MyPlayerPos;
 
 
-        MyPlayerPos = new Vector2(player.transform.position.x - 250.0f, player.transform.position.z - 250.0f);
+        MyPlayerPos = new Vector2(player.transform.position.x - 125, player.transform.position.z - 125);
 
         myposimg.anchoredPosition = MyPlayerPos;
 

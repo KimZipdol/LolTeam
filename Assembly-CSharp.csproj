@@ -95,6 +95,8 @@
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\MyCursor.cs" />
+    <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\StatsExample.cs" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
     <None Include="Assets\8. Imported\Shared\Shaders\SurfaceShader_VC.shader" />

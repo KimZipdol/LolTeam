@@ -20,6 +20,8 @@ public class CameraFollow : MonoBehaviour {
     public Map_spone apple;
    
 
+
+
     public enum pos
     {
         none,
@@ -36,12 +38,16 @@ public class CameraFollow : MonoBehaviour {
     Vector3 firstPos;
 
     public Picking picking;
-	// Use this for initialization
-	void Start () {
+
+    public RectTransform SHOP;
+
+    ChampStat shop_paenl;
+    // Use this for initialization
+    void Start () {
         firstPos = transform.position;
 
         apple = FindObjectOfType<Map_spone>();
-
+        shop_paenl = FindObjectOfType<ChampStat>();
     }
 	
 	// Update is called once per frame
@@ -52,23 +58,27 @@ public class CameraFollow : MonoBehaviour {
 
         Vector2 mousepos = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - screenpos;
 
-        if (mousepos.x <= -800.0f)
+        if (mousepos.x <= -950.0f)
             Emousepos = pos.left;
-        if (mousepos.x >= 800.0f)
+        if (mousepos.x >= 950.0f)
             Emousepos = pos.right;
-        if (mousepos.y <= -400.0f)
+
+        if (mousepos.y <= -530.0f)
             Emousepos = pos.down;
-        if (mousepos.y >= 400.0f)
+        if (mousepos.y >= 530.0f)
             Emousepos = pos.up;
 
-        if (mousepos.y <= -400.0f || mousepos.y >= 400.0f ||
-            mousepos.x <= -800.0f || mousepos.x >= 800.0f)
+        if (mousepos.y <= -530.0f || mousepos.y >= 530.0f ||
+            mousepos.x <= -950.0f || mousepos.x >= 950.0f)
         {
             // Debug.Log(mousepos);
+            if (!shop_paenl.shop_paenlMove)
+            {
+                Vector3 dir = (player_target.position - new Vector3(mousepos.x, 0, mousepos.y)).normalized;
+                dir.y = 0;
 
-            Vector3 dir = (player_target.position - new Vector3(mousepos.x, 0, mousepos.y)).normalized;
-            dir.y = 0;
-            transform.position -= dir * Time.deltaTime * 15.0f;
+                transform.position -= dir * Time.deltaTime * 15.0f;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -76,7 +86,8 @@ public class CameraFollow : MonoBehaviour {
             transform.position = player_target.position + Vector3.up * firstPos.y;
         }
 
-        mapCameraland.anchoredPosition = new Vector2(transform.position.x-250, transform.position.z-250);
+        
+        mapCameraland.anchoredPosition = new Vector2(transform.position.x-125, transform.position.z-125);
 
 
 
@@ -101,9 +112,9 @@ public class CameraFollow : MonoBehaviour {
 
 
 
-        Vector2 poss = new Vector2(Input.mousePosition.x - (Screen.width - 500), Input.mousePosition.y);
+        Vector2 poss = new Vector2(Input.mousePosition.x - (Screen.width - 250), Input.mousePosition.y);
         Debug.Log(poss);
-        if (poss.x >= 0.0f && poss.x <= 500 && poss.y >= 0 && poss.y <= 500)
+        if (poss.x >= 0.0f && poss.x <= 250 && poss.y >= 0 && poss.y <= 250)
         {
             if (Input.GetMouseButtonDown(1))
             {

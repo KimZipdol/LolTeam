@@ -16,7 +16,7 @@ public class ChampStat : MonoBehaviour {
 
     public PlayerController player;
 
-    bool shop_paenlMove = false;
+    public bool shop_paenlMove = false;
 
     private void Update()
     {
