@@ -48,15 +48,21 @@ public class CameraFollow : MonoBehaviour {
 
         apple = FindObjectOfType<Map_spone>();
         shop_paenl = FindObjectOfType<ChampStat>();
+
+
+        Screen.SetResolution(Screen.width, Screen.height,true);
     }
 	
 	// Update is called once per frame
 	void LateUpdate () {
 
-
+        //스크린의 중앙 지점의 벡터2
         screenpos = new Vector2(Screen.width / 2, Screen.height / 2);
-
+       // Debug.Log("중앙 지점 : " + screenpos);
+        //마우스위치의 포지션위치를 스크린의 가운데 지점을 0,0 으로 만든다.
         Vector2 mousepos = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - screenpos;
+        //Debug.Log("마우스위치 : " + mousepos);
+
 
         if (mousepos.x <= -950.0f)
             Emousepos = pos.left;
@@ -67,6 +73,8 @@ public class CameraFollow : MonoBehaviour {
             Emousepos = pos.down;
         if (mousepos.y >= 530.0f)
             Emousepos = pos.up;
+
+
 
         if (mousepos.y <= -530.0f || mousepos.y >= 530.0f ||
             mousepos.x <= -950.0f || mousepos.x >= 950.0f)
@@ -92,45 +100,17 @@ public class CameraFollow : MonoBehaviour {
 
 
 
-        //맵 클릭 하면 그 위치포인트 받아와서 플레이어 이동시키기
-
-
-
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    Vector2 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //    Ray2D ray = new Ray2D(wp, Vector2.zero);
-        //    RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-        //   // if (hit.collider != null)
-        //    {
-        //        //Debug.Log(hit.collider);
-        //    }
-        //}
-
-
-
-
 
         Vector2 poss = new Vector2(Input.mousePosition.x - (Screen.width - 250), Input.mousePosition.y);
-        Debug.Log(poss);
+
+       // Debug.Log(poss);
         if (poss.x >= 0.0f && poss.x <= 250 && poss.y >= 0 && poss.y <= 250)
         {
             if (Input.GetMouseButtonDown(1))
             {
-                
                 picking.moved(picking._Agent, new Vector3(poss.x, player_target.position.y, poss.y));
-               
-                //picking._Agent.destination = new Vector3(poss.x ,player_target.position.y,poss.y);
-
-
             }
 
         }
-
-
-
-
-
     }
 }

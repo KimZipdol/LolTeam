@@ -38,6 +38,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
 
     public ItemInfoMation iteminfo = new ItemInfoMation();
 
+    [SerializeField]
     private Sprite childsprite;
     private ChampStat champ;
 
@@ -71,6 +72,11 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
         Gamemanager.Instance.itemText_Panel.gameObject.SetActive(false);
     }
 
+
+
+
+
+
     public static int iCount = 0;
     //클릭햇을때
     public void OnPointerClick(PointerEventData eventData)
@@ -87,6 +93,8 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
                 // Gamemanager.Instance.Inventorydic.Add(childsprite.name, item.Value);
                 if (Gamemanager.Instance.InvenSlot.Count > iCount)
                 {
+
+
                     Gamemanager.Instance.InvenSlot[Gamemanager.Instance.InventoryTempIdx()].sprite = item.Value.ItemImg;
                     Gamemanager.Instance.inventoryData.Add(item.Value);
                     ++iCount;
@@ -99,6 +107,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
                         champ.player.Atk += Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemfoIdx;
                     }
+
                     else if (Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemkind == ItemKind.ARMOR)
                     {

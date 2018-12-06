@@ -11,7 +11,11 @@ public class Skills : MonoBehaviour
 	public Text WCoolText;
 	public Text ECoolText;
 	public Text RCoolText;
-	public Picking _picking;
+    public Image QCoolImage;
+    public Image WCoolImage;
+    public Image ECoolImage;
+    public Image RCoolImage;
+    public Picking _picking;
 
 	[Header("Object Pool")]
 	public GameObject QExpEffect;
@@ -27,7 +31,10 @@ public class Skills : MonoBehaviour
 	private int HashE = Animator.StringToHash("E");
 	private int HashR = Animator.StringToHash("R");
 
-	private void Awake()
+    private float QFillAmount = 1;
+    private float SkillTimes = 10.0f;
+
+    private void Awake()
 	{
 		GameObject effectPools = new GameObject("EffectPools");
 
@@ -57,7 +64,9 @@ public class Skills : MonoBehaviour
 			_picking._isMove = false;
 			StartCoroutine(SkillRot());
 			StartCoroutine(QSkill());
-		}
+            
+             StartCoroutine(QImgCool());
+        }
 		WTime += Time.deltaTime;
 		if (Input.GetButtonDown("WSkill") && WTime >= WCooltime)
 		{
@@ -75,8 +84,9 @@ public class Skills : MonoBehaviour
 		}
 		QTime += Time.deltaTime;
 		QCoolText.text = (QCooltime - QTime).ToString("0.0") + 's';
+       
 
-		if (WTime > WCooltime)
+        if (WTime > WCooltime)
 		{
 			WCoolText.gameObject.SetActive(false);
 		}
@@ -107,9 +117,35 @@ public class Skills : MonoBehaviour
 		}
 		yield return null;
 	}
+   
+    IEnumerator QImgCool()
+    {
+        
+
+        while (true)
+        {
+            if (QFillAmount <= 0.0f) break;
+            yield return new WaitForSeconds(0.02f);
+            SkillTimes -= Time.deltaTime*5;
+            QFillAmount = SkillTimes * 0.1f;
+
+            QCoolImage.fillAmount = QFillAmount;
+            Debug.Log(QFillAmount);
+
+            yield return null;
+        }
+
+
+    }
+
+
 
 	IEnumerator QSkill()
 	{
+        QFillAmount = 1;
+        QCoolImage.fillAmount = QFillAmount;
+
+
 		QTime = 0.0f;
 		_Anim.SetTrigger(HashQ);
 		QEffect.SetActive(true);

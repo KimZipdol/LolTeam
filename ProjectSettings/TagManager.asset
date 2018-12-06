@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - BULLET
+  - map
+  - Red_Minion_Weapon
   layers:
   - Default
   - TransparentFX

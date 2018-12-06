@@ -95,9 +95,10 @@ public class Gamemanager : MonoBehaviour
     private void Start()
     {
         //인벤 아이템 슬롯 이미지컴포넌트에 접근해서 리스트에 저장
-        InvenSlot.AddRange(GameObject.Find("Champ_Inventory").GetComponentsInChildren<Image>());
+        InvenSlot.AddRange( GameObject.Find("Champ_Inventory").GetComponentsInChildren<Image>() );
         //0번째 제거
         InvenSlot.RemoveAt(0);
+
         itemText_Panel.gameObject.SetActive(false);
         gameState = GameState.Start;
         moneysecond = StartCoroutine(MoneyCorutine());
@@ -111,6 +112,23 @@ public class Gamemanager : MonoBehaviour
 
 
         //  StartCoroutine(objectfullinpect());
+    }
+    public int InventoryTempIdx()
+    {
+        int idx =0;
+        for (int i = 0; i < InvenSlot.Count; i++)
+        {
+            if (InvenSlot[i].sprite == TempSprite)
+            {
+                idx = i;
+                break;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return idx;
     }
    
 
@@ -149,23 +167,6 @@ public class Gamemanager : MonoBehaviour
     }
 
 
-    public int InventoryTempIdx()
-    {
-        int idx =0;
-        for (int i = 0; i < InvenSlot.Count; i++)
-        {
-            if (InvenSlot[i].sprite == TempSprite)
-            {
-                idx = i;
-                break;
-            }
-            else
-            {
-                continue;
-            }
-        }
-        return idx;
-    }
 
 
 
