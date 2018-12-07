@@ -61,6 +61,7 @@ public class Gamemanager : MonoBehaviour
     
 
     public Sprite TempSprite;
+    public RectTransform EnemyHpPrefeb;
 
 
     //인자값을 클래스로 받아와서 

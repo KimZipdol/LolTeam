@@ -46,7 +46,7 @@ public class Skills : MonoBehaviour
 
 	private void Update()
 	{
-		CoolTimeChk();
+		//CoolTimeChk();
 
 		//Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		//RaycastHit _hit;
@@ -59,7 +59,7 @@ public class Skills : MonoBehaviour
 		//_Player.transform.rotation = Quaternion.Slerp(_Player.transform.rotation, qRot, Time.deltaTime * 5.0f);
 		//Debug.Log(_hit.point.ToString());
 
-		if (Input.GetButtonDown("QSkill") && QTime >= QCooltime)
+		if (Input.GetButtonDown("QSkill") /*&& QTime >= QCooltime*/)
 		{
 			_picking._isMove = false;
 			StartCoroutine(SkillRot());
@@ -83,7 +83,7 @@ public class Skills : MonoBehaviour
 			QCoolText.gameObject.SetActive(false);
 		}
 		QTime += Time.deltaTime;
-		QCoolText.text = (QCooltime - QTime).ToString("0.0") + 's';
+		
        
 
         if (WTime > WCooltime)
@@ -120,18 +120,25 @@ public class Skills : MonoBehaviour
    
     IEnumerator QImgCool()
     {
-        
+        QFillAmount = 1;
+        SkillTimes = 5;
 
+        QCoolText.gameObject.SetActive(true);
         while (true)
         {
-            if (QFillAmount <= 0.0f) break;
+            
             yield return new WaitForSeconds(0.02f);
-            SkillTimes -= Time.deltaTime*5;
-            QFillAmount = SkillTimes * 0.1f;
-
+            QCoolText.text = (SkillTimes).ToString("0.0") + 's';
             QCoolImage.fillAmount = QFillAmount;
-            Debug.Log(QFillAmount);
 
+            SkillTimes -= Time.deltaTime*5;
+            QFillAmount = SkillTimes/5;
+            Debug.Log(QFillAmount);
+            if (QFillAmount <= 0.0f)
+            {
+                QCoolText.gameObject.SetActive(false);
+                break;
+            }
             yield return null;
         }
 
