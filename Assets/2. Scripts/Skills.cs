@@ -15,24 +15,38 @@ public class Skills : MonoBehaviour
     public Image WCoolImage;
     public Image ECoolImage;
     public Image RCoolImage;
+    public float WDist = 12.0f;
+    public float WSpd = 30.0f;
+
     public Picking _picking;
 
 	[Header("Object Pool")]
 	public GameObject QExpEffect;
 
-	private float QRadius = 3.0f;
+    private int SillPoint = 1;
+    private float QRadius = 3.0f;
 	private float QCooltime = 5.0f;
 	private float QTime = 5.0f;
 	private int HashQ = Animator.StringToHash("Q");
 	private GameObject QEffect;
 	private int HashW = Animator.StringToHash("W");
-	private float WCooltime = 8.0f;
-	private float WTime = 8.0f;
-	private int HashE = Animator.StringToHash("E");
+	private float WCooltime = 5.0f;
+	private float WTime = 5.0f;
+    private int WLvl = 0;
+    private bool isRolling = false;
+    private float moved = 0.0f;
+    private int HashE = Animator.StringToHash("E");
 	private int HashR = Animator.StringToHash("R");
 
-    private float QFillAmount = 1;
-    private float SkillTimes = 10.0f;
+    private float QFillAmount = 0;
+    private float WFillAmount = 0;
+    private float EFillAmount = 0;
+    private float RFillAmount = 0;
+
+    private float SkillTimes1 = 10.0f;
+    private float SkillTimes2 = 10.0f;
+    private float SkillTimes3 = 10.0f;
+    private float SkillTimes4 = 10.0f;
 
     private void Awake()
 	{
@@ -46,93 +60,76 @@ public class Skills : MonoBehaviour
 
 	private void Update()
 	{
-		//CoolTimeChk();
+		
 
-		//Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		//RaycastHit _hit;
-		//if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
-		//{
-		//	QEffect.transform.position = _hit.point;
-		//	QEffect.transform.localScale = Vector3.one * QRadius;
-		//}
-		//Quaternion qRot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
-		//_Player.transform.rotation = Quaternion.Slerp(_Player.transform.rotation, qRot, Time.deltaTime * 5.0f);
-		//Debug.Log(_hit.point.ToString());
-
-		if (Input.GetButtonDown("QSkill") /*&& QTime >= QCooltime*/)
+		if (Input.GetButtonDown("QSkill") && QFillAmount <=0)
 		{
 			_picking._isMove = false;
-			StartCoroutine(SkillRot());
+			
 			StartCoroutine(QSkill());
             
              StartCoroutine(QImgCool());
         }
 		WTime += Time.deltaTime;
-		if (Input.GetButtonDown("WSkill") && WTime >= WCooltime)
-		{
-			_picking._isMove = false;
-			StartCoroutine(SkillRot());
-			StartCoroutine(WSkill());
-		}
-	}
+        if (Input.GetButtonDown("WSkill") && WFillAmount <= 0)
+        {
+            _picking._isMove = false;
+            StartCoroutine(WSkill());
+            StartCoroutine(WImgCool());
+
+            isRolling = true;
+        }
+        if (isRolling)
+        {
+            _Player.transform.Translate(Vector3.forward * Time.deltaTime * WSpd);
+            moved += Vector3.forward.magnitude * Time.deltaTime * WSpd;
+            if (moved >= WDist)
+            {
+                isRolling = false;
+                moved = 0.0f;
+            }
+
+        }
+    }
 
 	void CoolTimeChk()
 	{
-		if (QTime > QCooltime)
-		{
-			QCoolText.gameObject.SetActive(false);
-		}
-		QTime += Time.deltaTime;
-		
-       
+        if (QTime > QCooltime)
+        {
+            QCoolText.gameObject.SetActive(false);
+        }
+        QTime += Time.deltaTime;
+        QCoolText.text = (QCooltime - QTime).ToString("0.0") + 's';
 
         if (WTime > WCooltime)
-		{
-			WCoolText.gameObject.SetActive(false);
-		}
-		WTime += Time.deltaTime;
-		//ETime += Time.deltaTime;
-		//RTime += Time.deltaTime;
+        {
+            WCoolText.gameObject.SetActive(false);
+        }
+        WTime += Time.deltaTime;
+        WCoolText.text = (WCooltime - WTime).ToString("0.0") + 's';
+        //ETime += Time.deltaTime;
+        //RTime += Time.deltaTime;
 
 
-	}
+    }
 
-	IEnumerator SkillRot()
-	{
-		float rotTime = 0.0f;
-		while (true)
-		{
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit _hit;
-			if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
-			{
-				QEffect.transform.position = _hit.point;
-				QEffect.transform.localScale = Vector3.one * QRadius;
-			}
-			Quaternion qRot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
-			_Player.transform.rotation = Quaternion.Slerp(_Player.transform.rotation, qRot, Time.deltaTime * 100.0f);
-			rotTime += Time.deltaTime;
-			if (rotTime >= 0.1f)
-				break;
-		}
-		yield return null;
-	}
+ 
    
     IEnumerator QImgCool()
     {
         QFillAmount = 1;
-        SkillTimes = 5;
+        SkillTimes1 = 5;
 
         QCoolText.gameObject.SetActive(true);
         while (true)
         {
             
             yield return new WaitForSeconds(0.02f);
-            QCoolText.text = (SkillTimes).ToString("0.0") + 's';
+            QCoolText.text = (SkillTimes1).ToString("0.0") + 's';
             QCoolImage.fillAmount = QFillAmount;
 
-            SkillTimes -= Time.deltaTime*5;
-            QFillAmount = SkillTimes/5;
+            SkillTimes1 -= Time.deltaTime*5;
+            QFillAmount = SkillTimes1/5;
             Debug.Log(QFillAmount);
             if (QFillAmount <= 0.0f)
             {
@@ -157,28 +154,78 @@ public class Skills : MonoBehaviour
 		_Anim.SetTrigger(HashQ);
 		QEffect.SetActive(true);
 		QCoolText.gameObject.SetActive(true);
-		//Collider[] colls = Physics.OverlapSphere(QEffect.transform.position, QRadius);
-		//foreach (var item in colls)
-		//{
-		//
-		//}
-		yield return new WaitForSeconds(1.3f);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit _hit;
+        if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
+        {
+            QEffect.transform.position = _hit.point;
+            QEffect.transform.localScale = Vector3.one * QRadius;
+        }
+        Quaternion qRot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
+        _Player.transform.rotation = Quaternion.Slerp(_Player.transform.rotation, qRot, Time.deltaTime * 100.0f);
+        //Collider[] colls = Physics.OverlapSphere(QEffect.transform.position, QRadius);
+        //foreach (var item in colls)
+        //{
+        //
+        //}
+
+        yield return new WaitForSeconds(1.3f);
 		QEffect.SetActive(false);
 	}
+    IEnumerator ShowQEffect()
+    {
+        QEffect.SetActive(true);
+        yield return new WaitForSeconds(1.3f);
+        QEffect.SetActive(false);
+    }
 
-	IEnumerator WSkill()
-	{
-		WTime = 0.0f;
-		_Anim.SetTrigger(HashW);
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit _hit;
 
-		if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
-		{
-			
-		}
-		
-		yield return new WaitForSeconds(1.8f);
-	}
+
+    IEnumerator WSkill()
+    {
+        WTime = 0.0f;
+        WCoolText.gameObject.SetActive(true);
+        _Anim.SetBool(HashW, true);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit _hit;
+        Quaternion rot;
+        if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
+        {
+            rot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
+        }
+        rot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
+        _Player.transform.rotation = rot;
+
+        yield return new WaitForSeconds(0.6f);
+        //yield return null;
+        _Anim.SetBool(HashW, false);
+    }
+
+    IEnumerator WImgCool()
+    {
+        WFillAmount = 1;
+        SkillTimes2 = 5;
+
+        WCoolText.gameObject.SetActive(true);
+        while (true)
+        {
+
+            yield return new WaitForSeconds(0.02f);
+            WCoolText.text = (SkillTimes2).ToString("0.0") + 's';
+            WCoolImage.fillAmount = WFillAmount;
+
+            SkillTimes2 -= Time.deltaTime * 5;
+            WFillAmount = SkillTimes2 / 5;
+            Debug.Log(WFillAmount);
+            if (WFillAmount <= 0.0f)
+            {
+                WCoolText.gameObject.SetActive(false);
+                break;
+            }
+            yield return null;
+        }
+    }
+
+
 
 }

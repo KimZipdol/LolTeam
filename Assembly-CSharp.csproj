@@ -97,6 +97,7 @@
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\MyCursor.cs" />
     <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\StatsExample.cs" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
@@ -111,6 +112,7 @@
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\8. Imported\RainEntertainment\FantasyMonster2\Fallen Angle Pack\readMe.txt" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+    <None Include="Assets\UETools\Magic_Particle_Effects\Readme.txt" />
     <None Include="Assets\8. Imported\UnityChan\Stage\Shader\AlphaMask.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
     <None Include="Assets\8. Imported\RainEntertainment\FantasyMonster2\Priest Pack\readMe.txt" />
