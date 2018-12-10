@@ -42,6 +42,14 @@ public class CameraFollow : MonoBehaviour {
     public RectTransform SHOP;
 
     ChampStat shop_paenl;
+
+
+    private float left;
+    private float right;
+    private float up;
+    private float down;
+
+
     // Use this for initialization
     void Start () {
         firstPos = transform.position;
@@ -63,21 +71,31 @@ public class CameraFollow : MonoBehaviour {
         Vector2 mousepos = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - screenpos;
         //Debug.Log("마우스위치 : " + mousepos);
 
+        left = (-Screen.width / 2) + (Screen.width  * 0.2f);
+        right = (Screen.width / 2) - (Screen.width  * 0.2f);
+        down = (-Screen.height / 2) + (Screen.height * 0.2f);
+        up = (Screen.height / 2) - (Screen.height * 0.2f);
 
-        if (mousepos.x <= -950.0f)
+
+        if (mousepos.x <= left)
             Emousepos = pos.left;
-        if (mousepos.x >= 950.0f)
+
+        else if (mousepos.x >= right)
             Emousepos = pos.right;
 
-        if (mousepos.y <= -530.0f)
+        else if (mousepos.y <= down)
             Emousepos = pos.down;
-        if (mousepos.y >= 530.0f)
+
+        else if (mousepos.y >= up)
             Emousepos = pos.up;
+        else
+            Emousepos = pos.none;
 
 
+        //TODO : 카메라가 맵밖으로 나가지 않도록 하기.
 
-        if (mousepos.y <= -530.0f || mousepos.y >= 530.0f ||
-            mousepos.x <= -950.0f || mousepos.x >= 950.0f)
+
+        if (Emousepos != pos.none)
         {
             // Debug.Log(mousepos);
             if (!shop_paenl.shop_paenlMove)
