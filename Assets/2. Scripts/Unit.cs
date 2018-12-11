@@ -50,8 +50,7 @@ public class Unit : MonoBehaviour {
     protected int Lev = 1;
     protected int MaxLev = 18;
 
-    protected int Exp = 0;
-    protected int MaxExp;
+    
 
 
 
