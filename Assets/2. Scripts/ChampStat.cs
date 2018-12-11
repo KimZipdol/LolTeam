@@ -7,30 +7,16 @@ using DG.Tweening;
 
 public class ChampStat : MonoBehaviour {
 
+    public RectTransform SHOP_panel;
 
-
-    public Transform SHOP_panel;
-    
-
-    public Text[] ChampStat_text;
-
-
-    bool shop_paenlMove = false;
+    public bool shop_paenlMove = false;
 
     private void Update()
     {
-        //ChampStat_text[0].text = "공격력 : " + Gamemanager.Instance.player.Atk;
-        //ChampStat_text[1].text = "방어력 : " + Gamemanager.Instance.player.Def;
-
-
-
         if (Input.GetKeyDown(KeyCode.P))
         {
             shop_paenlMove = !shop_paenlMove;
-
-            
         }
-
 
         if (!shop_paenlMove)
         {
@@ -38,12 +24,8 @@ public class ChampStat : MonoBehaviour {
         }
         else
         {
-            SHOP_panel.DOMoveX(350*2, 1.0f);
+            SHOP_panel.DOMoveX(840, 1.0f);
         }
-
-
-
-
     }
 
 
