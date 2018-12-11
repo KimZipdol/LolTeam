@@ -98,6 +98,12 @@
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\8. Imported\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\CameraTarget.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectController.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectDemo.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectShaderPropertyStr.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\RenderEffect.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\TransformExtension.cs" />
     <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\MyCursor.cs" />
     <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\StatsExample.cs" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
@@ -106,20 +112,28 @@
     <None Include="Assets\8. Imported\DOTween\readme.txt" />
     <None Include="Assets\8. Imported\UnityChan\license.txt" />
     <None Include="Assets\8. Imported\RainEntertainment\FantasyMonster\FireDemon\readMe.txt" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\effect_distortion_mask.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\8. Imported\RainEntertainment\FantasyMonster2\Fallen Angle Pack\readMe.txt" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\Toon Blended Premmultiply.shader" />
     <None Include="Assets\UETools\Magic_Particle_Effects\Readme.txt" />
     <None Include="Assets\8. Imported\UnityChan\Stage\Shader\AlphaMask.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticlePremultiplyBlend.shader" />
     <None Include="Assets\8. Imported\RainEntertainment\FantasyMonster2\Priest Pack\readMe.txt" />
+    <None Include="Assets\Particlecollection_Free samples\READ ME.txt" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
     <None Include="Assets\8. Imported\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
     <None Include="Assets\8. Imported\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddEffect.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\Toon Additive.shader" />
     <None Include="Assets\Tiny Fantasy Icons\README.txt" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleBlendEffect.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/유니티관련/프로젝트/LOLMZ/LolTeam/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

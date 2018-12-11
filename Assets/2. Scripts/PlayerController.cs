@@ -9,6 +9,8 @@ public class PlayerController : Unit
     public delegate void ExpHandler(int n);         
     public static ExpHandler ExpEvent;
 
+    private UnityStat unityStat;
+  
 
 
     //내멋대로 수식 
@@ -22,8 +24,7 @@ public class PlayerController : Unit
         print(Hp);
         Atk = Random.Range(10 * Lev, 20 * Lev);
         Def = 3;
-
-
+        unityStat = GetComponent<UnityStat>();
     }
 
     private void OnEnable()
@@ -45,6 +46,10 @@ public class PlayerController : Unit
         Exp = 0;
         Gamemanager.Instance.Expslider.value = 0;
         Gamemanager.Instance.PlayerLevText.text = ++Lev + "";
+
+        unityStat.LvlUp();
+
+
     }
 
     //적 잡으면 이놈 호출 하셈. (PlayerController.ExpEvent(획득경험치))
@@ -58,7 +63,7 @@ public class PlayerController : Unit
         }
     }
 
-   
+  
 
 
 

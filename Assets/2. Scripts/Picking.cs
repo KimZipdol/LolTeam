@@ -73,8 +73,6 @@ public class Picking : MonoBehaviour {
             {
                 //검출된 오브젝트를 저장한다.
                 _hitObject = _hit.collider.gameObject;
-               // Debug.Log(_hitObject.name);
-
 
                 //클릭한 위치를 저장한다.
                 hitPoint = _hit.point;
@@ -96,9 +94,6 @@ public class Picking : MonoBehaviour {
                 {
                     if (_isClick) return;
                     moved(_Agent,hitPoint);
-
-
-
                 }
                 /*
                 else if (_hitObject.gameObject.tag == "Enemy")

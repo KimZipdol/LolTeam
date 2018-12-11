@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UnityStat : MonoBehaviour {
 
-    public GameObject LvlUpParticle = null;
+    public GameObject LvlUpParticle;
     public Text atkText;
     public Text defText;
     public Text hpText = null;
@@ -38,24 +38,32 @@ public class UnityStat : MonoBehaviour {
     private float moveSpd = 325.0f;
     private float atkRange = 550.0f;
 
+    [HideInInspector]
+    public ParticleSystem[] particles;
 
-    private void Start()
+    private void Awake()
     {
         currHp = initHp;
         currMp = initMp;
         RefreshStat();
         RefreshHpMp();
+
+        particles = LvlUpParticle.GetComponentsInChildren<ParticleSystem>();
+      
+
+        LvlUpParticle.SetActive(false);
+
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            LvlUp();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    LvlUp();
+        //}
     }
 
-    void LvlUp()
+    public void LvlUp()
     {
         initHp += hpGrowth;
         currHp += hpGrowth;
@@ -80,9 +88,9 @@ public class UnityStat : MonoBehaviour {
 
     void RefreshHpMp()
     {
-      //  hpText.text = (int)currHp + " / " + (int)initHp + "  ( + " + initHpRegen + ")";
+        hpText.text = (int)currHp + " / " + (int)initHp + "  ( + " + initHpRegen + ")";
         hpImg.value = currHp / initHp;
-      //  mpText.text = (int)currMp + " / " + (int)initMp + "  ( + " + initMpRegen + ")";
+        mpText.text = (int)currMp + " / " + (int)initMp + "  ( + " + initMpRegen + ")";
         mpImg.value = currMp / initMp;
     }
 
