@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/1. Scenes/Game_MapChange.unity
+- path: Assets/1. Scenes/Character.unity
   isLoaded: 1
   isActive: 1
