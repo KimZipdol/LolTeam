@@ -40,12 +40,12 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
 
     [SerializeField]
     private Sprite childsprite;
-    private ChampStat champ;
+    private UnityStat champ;
 
     private void Awake()
     {
         childsprite = transform.GetChild(0).GetComponent<Image>().sprite;
-        champ = FindObjectOfType<ChampStat>();
+        champ = FindObjectOfType<UnityStat>();
     }
 
     //마우스 포인터가 들어왔을때
@@ -104,14 +104,14 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler,
                     if (Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemkind == ItemKind.WEAPON)
                     {
-                        champ.player.Atk += Gamemanager.Instance.inventoryData
+                        champ.initAtk += Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemfoIdx;
                     }
 
                     else if (Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemkind == ItemKind.ARMOR)
                     {
-                        champ.player.Def += Gamemanager.Instance.inventoryData
+                        champ.initDef += Gamemanager.Instance.inventoryData
                         [Gamemanager.Instance.inventoryData.Count - 1].itemfoIdx;
                     }
 

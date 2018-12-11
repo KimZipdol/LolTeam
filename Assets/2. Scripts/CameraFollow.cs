@@ -113,7 +113,8 @@ public class CameraFollow : MonoBehaviour {
         }
 
         
-        mapCameraland.anchoredPosition = new Vector2(transform.position.x-125, transform.position.z-125);
+        //mapCameraland.anchoredPosition = new Vector2(transform.position.x-125, transform.position.z-125);
+        mapCameraland.anchoredPosition = new Vector2(transform.position.x, transform.position.z);
 
 
 
@@ -127,7 +128,8 @@ public class CameraFollow : MonoBehaviour {
             if (Input.GetMouseButtonDown(1))
             {
                 picking.moved(picking._Agent, new Vector3(poss.x, player_target.position.y, poss.y));
-                mapCameraland.anchoredPosition = new Vector2(transform.position.x - 125, transform.position.z - 125);
+                //mapCameraland.anchoredPosition = new Vector2(transform.position.x - 125, transform.position.z - 125);
+                mapCameraland.anchoredPosition = new Vector2(transform.position.x, transform.position.z );
             }
 
         }

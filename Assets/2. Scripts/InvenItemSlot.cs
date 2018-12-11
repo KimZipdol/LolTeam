@@ -10,11 +10,11 @@ public class InvenItemSlot : MonoBehaviour, IPointerClickHandler
     public Image childImg;
 
     private ItemInfoMation iteminfo;
-    private ChampStat champ;
+    private UnityStat champ;
 
     void Start () {
         childImg = transform.GetChild(0).GetComponent<Image>();
-        champ = FindObjectOfType<ChampStat>();
+        champ = FindObjectOfType<UnityStat>();
     }
 	
 	
@@ -30,9 +30,9 @@ public class InvenItemSlot : MonoBehaviour, IPointerClickHandler
                 iteminfo = item;
 
                 if (item.itemkind == ItemKind.WEAPON)
-                    champ.player.Atk -= item.itemfoIdx;
+                    champ.initAtk -= item.itemfoIdx;
                 else if (item.itemkind == ItemKind.ARMOR)
-                    champ.player.Def -= item.itemfoIdx;
+                    champ.initDef -= item.itemfoIdx;
 
                 break;
             }

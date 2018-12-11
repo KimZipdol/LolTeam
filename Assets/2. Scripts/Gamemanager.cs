@@ -64,6 +64,10 @@ public class Gamemanager : MonoBehaviour
     public RectTransform EnemyHpPrefeb;
 
 
+    public Slider Expslider;
+    public Text PlayerLevText;
+
+
     //인자값을 클래스로 받아와서 
     public void ItemInfo(ItemInfoMation info)
     {
@@ -84,6 +88,12 @@ public class Gamemanager : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            PlayerController.ExpEvent(5);
+        }
+
 
         //활성화상태일때
         if (itemText_Panel.gameObject.activeSelf)

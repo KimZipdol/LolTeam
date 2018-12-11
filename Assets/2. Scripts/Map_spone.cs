@@ -12,12 +12,6 @@ public class Map_spone : MonoBehaviour {
     public RectTransform myposimg;
 
 
-    private void Awake()
-    {
-        
-
-        
-    }
 
     private void Update()
     {
@@ -26,7 +20,7 @@ public class Map_spone : MonoBehaviour {
        // myposimg.transform.position = MyPlayerPos;
 
 
-        MyPlayerPos = new Vector2(player.transform.position.x - 125, player.transform.position.z - 125);
+        MyPlayerPos = new Vector2(player.transform.position.x, player.transform.position.z);
 
         myposimg.anchoredPosition = MyPlayerPos;
 
