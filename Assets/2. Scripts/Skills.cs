@@ -7,6 +7,8 @@ public class Skills : MonoBehaviour
 {
 	public GameObject _Player;
 	public Animator _Anim;
+	public float abillityPower;
+	public float atkDamage;
 	public Text QCoolText;
 	public Text WCoolText;
 	public Text ECoolText;
@@ -23,17 +25,20 @@ public class Skills : MonoBehaviour
 	[Header("Object Pool")]
 	public GameObject QExpEffect;
 
-    private int SillPoint = 1;
+    private int SkillPoint = 1;
     private float QRadius = 3.0f;
 	private float QCooltime = 5.0f;
 	private float QTime = 5.0f;
 	private int HashQ = Animator.StringToHash("Q");
 	private GameObject QEffect;
+	private float qDamage;
+	private int qLvl = 1;
 	private int HashW = Animator.StringToHash("W");
 	private float WCooltime = 5.0f;
 	private float WTime = 5.0f;
-    private int WLvl = 0;
-    private bool isRolling = false;
+	private float wDamage;
+	private int wLvl = 0;
+	private bool isRolling = false;
     private float moved = 0.0f;
     private int HashE = Animator.StringToHash("E");
 	private int HashR = Animator.StringToHash("R");
@@ -56,6 +61,7 @@ public class Skills : MonoBehaviour
 		obj.name = "QEffect";
 		obj.SetActive(false);
 		QEffect = obj;
+		SetSkillDmg();
 	}
 
 	private void Update()
@@ -91,6 +97,19 @@ public class Skills : MonoBehaviour
 
         }
     }
+
+	void OnStatChange(float newAP, float newAD)
+	{
+		abillityPower = newAP;
+		atkDamage = newAD;
+		SetSkillDmg();
+	}
+
+	void SetSkillDmg()
+	{
+		qDamage = (int)(70 + ((qLvl - 1) * 35) + (abillityPower * 0.35));
+	}
+
 
 	void CoolTimeChk()
 	{
@@ -163,11 +182,14 @@ public class Skills : MonoBehaviour
         }
         Quaternion qRot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
         _Player.transform.rotation = Quaternion.Slerp(_Player.transform.rotation, qRot, Time.deltaTime * 100.0f);
-        //Collider[] colls = Physics.OverlapSphere(QEffect.transform.position, QRadius);
-        //foreach (var item in colls)
-        //{
-        //
-        //}
+        Collider[] colls = Physics.OverlapSphere(QEffect.transform.position, QRadius/2);
+        foreach (var item in colls)
+        {
+			if(item.gameObject.layer==9)
+			{
+				item.SendMessage("GetDamage", qDamage, SendMessageOptions.RequireReceiver);
+			}
+        }
 
         yield return new WaitForSeconds(1.3f);
 		QEffect.SetActive(false);

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public enum State { Idle , Trace , Attack , Dead }
 public class Minion_red : Unit {
 
-    private Transform tr;
+	private Transform tr;
     private Quaternion FirstRot;
     private NavMeshAgent _agent;
 
@@ -24,7 +24,7 @@ public class Minion_red : Unit {
         HpSprite = Instantiate(Gamemanager.Instance.EnemyHpPrefeb) as RectTransform;
         HpSprite.SetParent(GameObject.Find("EnemyHp_Canvas").transform);
         FirstRot = tr.rotation;
-        
+		Hp = Maxhp;
     }
 
     private void FixedUpdate()
@@ -37,7 +37,10 @@ public class Minion_red : Unit {
         HpSprite.transform.position += new Vector3(0, 70, 0);
     }
 
-
+	void GetDamage(float damage)
+	{
+		Hp -= (int)damage;
+	}
 
 
 
