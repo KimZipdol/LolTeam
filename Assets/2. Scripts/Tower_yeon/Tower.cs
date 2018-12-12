@@ -5,11 +5,6 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
 
-    [Header("오브젝트풀_Bullet Object Pool")]
-    public GameObject bulletPrefab; // 생성할 총알 원본 프리팹
-    public int maxBulletPool = 10;
-    public List<GameObject> bulletPool = new List<GameObject>();
-
     public const float attckRadius = 10.0f; //공격범위 타워반경 10m //const하니까 인스펙터뷰에 노출안되네
     public float createRateMin = 0.5f; //최소 생성주기
     public float createRateMax = 3f; //최대 생성주기
@@ -22,8 +17,6 @@ public class Tower : MonoBehaviour
     {
         timeAfterCreate = 0f; //타이머 리셋
         createRate = Random.Range(createRateMin, createRateMax);
-
-        CreateBullet(transform.position);
 
     }
 
@@ -51,34 +44,21 @@ public class Tower : MonoBehaviour
     IEnumerator FindingMinion()
     {
         Collider[] colls = Physics.OverlapSphere(transform.position, attckRadius);
+        Debug.Log(colls);
         foreach (var item in colls)
         {
-            Debug.Log("태그검출 if문 진입전");
-            if(item.gameObject.CompareTag("Minion_Red"))
+            if(item.CompareTag("Minion_Red"))
             {
-                Debug.Log("태그검출 if문 진입");
+                
                 Vector3 dir = item.gameObject.transform.position - transform.position;
-                Quaternion attckDir = Quaternion.LookRotation(dir, Vector3.forward);
+                Quaternion attckDir = Quaternion.LookRotation(dir, Vector3.up);
 
                 transform.rotation = attckDir;
-
             }
-
 
         }
         yield return null;
     }
 
-    public void CreateBullet(Vector3 pos)
-    {
-        GameObject objectPools = new GameObject("BulletObjectPools");
 
-        for (int i = 0; i < maxBulletPool; i++)
-        {
-            var obj = Instantiate<GameObject>(bulletPrefab, objectPools.transform);
-            obj.name = "Bullet_" + i.ToString("00"); //ToString(출력형식) >> i값을 출력하는데 두자리 숫자로 출력해
-            obj.SetActive(false); //해당오브젝트를 비활성화
-            bulletPool.Add(obj);
-        }
-    }
 }
