@@ -9,10 +9,13 @@ public class Skills : MonoBehaviour
 	public Animator _Anim;
 	public float abillityPower;
 	public float atkDamage;
+    public bool isPassiveOn = true;
+    public Text passiveCoolText;
 	public Text QCoolText;
 	public Text WCoolText;
 	public Text ECoolText;
 	public Text RCoolText;
+    public Image passiveCoolImage;
     public Image QCoolImage;
     public Image WCoolImage;
     public Image ECoolImage;
@@ -26,6 +29,7 @@ public class Skills : MonoBehaviour
 	public GameObject QExpEffect;
 
     private int SkillPoint = 1;
+    private float passiveCool = 12.0f;
     private float QRadius = 3.0f;
 	private float QCooltime = 5.0f;
 	private float QTime = 5.0f;

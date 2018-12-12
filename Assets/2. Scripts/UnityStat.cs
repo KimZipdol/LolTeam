@@ -8,14 +8,18 @@ public class UnityStat : MonoBehaviour {
     public GameObject LvlUpParticle = null;
     public Text atkText;
     public Text defText;
+    public Text apText;
+    public Text moveSpdText;
     public Text hpText = null;
     public Slider hpImg;
     public Text mpText = null;
     public Slider mpImg;
+    public int level = 1;
 
     //롤 캐릭터 '직스'의 스탯을 가져옴. 상황에 맞게 수정해야함.
     float currHp;
     float currMp;
+    public float abillityPower = 0.0f;
     public float initHp = 536.0f;
     private float hpGrowth = 92.0f;
     public float initMp = 480.0f;
@@ -76,6 +80,8 @@ public class UnityStat : MonoBehaviour {
     {
         atkText.text = "공격력 : " + (int)initAtk;
         defText.text = "방어력 : " + (int)initDef;
+        apText.text = "주문력 : " + (int)abillityPower;
+        moveSpdText.text = "이동속도 : " + (int)moveSpd;
     }
 
     void RefreshHpMp()
