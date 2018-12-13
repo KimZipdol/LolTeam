@@ -18,18 +18,7 @@ public class Bullet : MonoBehaviour {
 
     }
 
-    //트리거 충돌시 자동실행(상대방 콜라이더 감지)
-    private void OnTriggerEnter(Collider other)
-    {
-        // ****** Minion 태그 만들어 달 예정 _yeon1123
-        if(other.gameObject.tag == "Minion")
-        {
-            PlayerController playerController = other.GetComponent<PlayerController>();
-            
-            //****** PlayerController스크립에 Die 함수 만들예정 _yeon 1123
-            //playerController.Die();
-        }
-    }
+
 
 
 }

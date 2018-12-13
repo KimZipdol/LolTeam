@@ -222,6 +222,25 @@ Prefab:
       propertyPath: m_Name
       value: Tower_Red (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
   m_IsPrefabAsset: 0
@@ -268,6 +287,25 @@ Prefab:
       propertyPath: m_Name
       value: Tower_Blue (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
   m_IsPrefabAsset: 0
@@ -304,8 +342,25 @@ Transform:
   - {fileID: 561774262}
   - {fileID: 1841405549}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &391673113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100050, guid: aad05534a7ba0dd49b8c54ce188308ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 2106773612}
+--- !u!114 &391673117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391673113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9794781e9ebb0d44878d6527ae88f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +566,25 @@ Prefab:
       propertyPath: m_Name
       value: Tower_Red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
   m_IsPrefabAsset: 0
@@ -553,9 +627,45 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &747465024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100048, guid: 272ec112bddec644a8af6599107e74f7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1032143688}
+--- !u!114 &747465028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747465024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9794781e9ebb0d44878d6527ae88f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1001 &921548075
 Prefab:
   m_ObjectHideFlags: 0
@@ -604,6 +714,25 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
   m_IsPrefabAsset: 0
@@ -624,7 +753,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 272ec112bddec644a8af6599107e74f7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: 6.64
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 272ec112bddec644a8af6599107e74f7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -652,7 +781,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100048, guid: 272ec112bddec644a8af6599107e74f7, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100048, guid: 272ec112bddec644a8af6599107e74f7, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272ec112bddec644a8af6599107e74f7, type: 2}
@@ -709,6 +842,25 @@ Prefab:
       propertyPath: m_TagString
       value: Nexus_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
   m_IsPrefabAsset: 0
@@ -750,13 +902,106 @@ Transform:
   - {fileID: 1757018371}
   - {fileID: 1210721640}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1381347640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4558868516413710, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
     type: 2}
   m_PrefabInternal: {fileID: 725754048}
+--- !u!1 &1408068461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1408068465}
+  - component: {fileID: 1408068464}
+  - component: {fileID: 1408068463}
+  - component: {fileID: 1408068462}
+  m_Layer: 5
+  m_Name: EnemyHp_Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1408068462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408068461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1408068463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408068461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1408068464
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408068461}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 1
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1408068465
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408068461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1708686423
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +1137,25 @@ Prefab:
       propertyPath: m_Name
       value: Tower_Blue (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
   m_IsPrefabAsset: 0
@@ -922,7 +1186,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832885292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 084f1b53c6a665247b85f3c5c172a8c4, type: 3}
   m_Name: 
@@ -934,7 +1198,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832885292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6201c3ee5bcdd7147873b127aeadbee8, type: 3}
   m_Name: 
@@ -982,7 +1246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1832885297
 MonoBehaviour:
@@ -990,7 +1254,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832885292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e924ec5e420e69045b05243b79061a4f, type: 3}
   m_Name: 
@@ -1007,7 +1271,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832885292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a61f8397ac626d2419af8480f5768ad6, type: 3}
   m_Name: 
@@ -1021,7 +1285,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832885292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7147412377d67846bfb31d66956baaa, type: 3}
   m_Name: 
@@ -1098,6 +1362,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
   m_IsPrefabAsset: 0
@@ -1143,6 +1426,25 @@ Prefab:
     - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
       propertyPath: m_Name
       value: Tower_Blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
@@ -1209,6 +1511,25 @@ Prefab:
       value: 
       objectReference: {fileID: 4558868516413710, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
         type: 2}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: whatIsMinion.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: minionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
+        type: 2}
+      propertyPath: targetMinionColor.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
   m_IsPrefabAsset: 0
@@ -1261,13 +1582,157 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2101351784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4558868516413710, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
     type: 2}
   m_PrefabInternal: {fileID: 265448633}
+--- !u!1 &2104337723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2104337727}
+  - component: {fileID: 2104337726}
+  - component: {fileID: 2104337725}
+  - component: {fileID: 2104337724}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2104337724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104337723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &2104337725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104337723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &2104337726
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104337723}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &2104337727
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104337723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!1001 &2106773612
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -12.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_Name
+      value: "Minion_Red(\uD14C\uC2A4\uD2B8\uC6A9)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202008115641732, guid: aad05534a7ba0dd49b8c54ce188308ec,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &2113458718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4558868516413710, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
@@ -1310,7 +1775,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4139976160784898, guid: fb4c47d38714ad64c91fa474dafe1e0c, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1285286863353818, guid: fb4c47d38714ad64c91fa474dafe1e0c, type: 2}
       propertyPath: m_Name

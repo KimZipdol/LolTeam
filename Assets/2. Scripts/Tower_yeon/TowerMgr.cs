@@ -48,17 +48,18 @@ public class TowerMgr : MonoBehaviour {
 
     IEnumerator GoMinion()
     {
-        int minionCount = (int)GameObject.FindGameObjectsWithTag("Minion_Blue").Length;
-        Debug.Log("에너미카운트!!!"+ minionCount);
-        if (minionCount < maxMinionPool)
-        {
-            yield return new WaitForSeconds(createTime);
+        
+        //int minionCount = (int)GameObject.FindGameObjectsWithTag("Minion_Blue").Length;
+        //Debug.Log("에너미카운트!!!"+ minionCount);
+        //if (minionCount < maxMinionPool)
+        //{
+        //    yield return new WaitForSeconds(createTime);
 
-            //var _enemy = GetMinion(); //참조복사 /클래스의 인스턴스끼리 대입연산을 하면 레퍼런스카피가 일어난다.
-            //_enemy.SetActive(true);
+        //    //var _enemy = GetMinion(); //참조복사 /클래스의 인스턴스끼리 대입연산을 하면 레퍼런스카피가 일어난다.
+        //    //_enemy.SetActive(true);
 
-            // Instantiate(enemy, points[idx].position, points[idx].rotation);
-        }
+        //    // Instantiate(enemy, points[idx].position, points[idx].rotation);
+        //}
 
 
 

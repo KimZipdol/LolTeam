@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
 
+    public LayerMask targetMinionColor;
     public const float attckRadius = 10.0f; //공격범위 타워반경 10m //const하니까 인스펙터뷰에 노출안되네
     public float createRateMin = 0.5f; //최소 생성주기
     public float createRateMax = 3f; //최대 생성주기
@@ -30,7 +31,6 @@ public class Tower : MonoBehaviour
         //Time.deltaTime은 직전의 Update와 현재 Update 실행 시점 사이의 시간 간격
         timeAfterCreate = timeAfterCreate + Time.deltaTime;
         // 누적된 시간이 생성 주기보다 크거나 같다
-            StartCoroutine(FindingMinion());
         if (timeAfterCreate >= createRate)
         {
             timeAfterCreate = 0f; // 누적된 시간을 리셋
@@ -43,22 +43,29 @@ public class Tower : MonoBehaviour
 
     IEnumerator FindingMinion()
     {
-        Collider[] colls = Physics.OverlapSphere(transform.position, attckRadius);
-        Debug.Log(colls);
+        Collider[] colls = Physics.OverlapSphere(transform.position, attckRadius, targetMinionColor);
         foreach (var item in colls)
         {
-            if(item.CompareTag("Minion_Red"))
-            {
-                
-                Vector3 dir = item.gameObject.transform.position - transform.position;
-                Quaternion attckDir = Quaternion.LookRotation(dir, Vector3.up);
+            //Debug.Log(item.name);
 
-                transform.rotation = attckDir;
-            }
+            Vector3 dir = item.gameObject.transform.position - transform.position;
+            Quaternion attckDir = Quaternion.LookRotation(dir, Vector3.up);
+            transform.rotation = attckDir;
 
         }
         yield return null;
     }
 
+    //트리거 충돌시 자동실행(상대방 콜라이더 감지)
+    private void OnTriggerEnter(Collider other)
+    {
+        StartCoroutine(FindingMinion());
+        if (other.gameObject.layer == targetMinionColor)
+        {
+            MinionHP minionHp = other.GetComponent<MinionHP>();
+            float damage = 10;
+            minionHp.TakeDamage(damage);
+        }
+    }
 
 }
