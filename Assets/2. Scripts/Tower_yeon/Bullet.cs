@@ -10,14 +10,19 @@ public class Bullet : MonoBehaviour {
     private Rigidbody bulletRigidbody;
 
 
-	void Start () {
+
+    private void Awake()
+    {
+        
         bulletRigidbody = GetComponent<Rigidbody>();
-
-        bulletRigidbody.velocity = transform.forward * speed;
-
-
     }
 
+    private void OnEnable()
+    {
+        bulletRigidbody.velocity = transform.forward * speed;
+        
+
+    }
 
 
 

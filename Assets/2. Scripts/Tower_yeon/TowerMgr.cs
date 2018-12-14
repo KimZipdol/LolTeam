@@ -16,7 +16,7 @@ public class TowerMgr : MonoBehaviour {
     public GameObject MinionPrefabRed;
     public GameObject MinionPrefabBlue;
     public Transform spawnPoint; //미니언 생성될 위치
-    public float createTime = 2.0f;
+    public float createTime = 1.0f;
     public List<GameObject> RedPool = new List<GameObject>();
     public List<GameObject> BluePool = new List<GameObject>();
 
@@ -42,29 +42,39 @@ public class TowerMgr : MonoBehaviour {
 
     void Start()
     {
-        StartCoroutine(GoMinion());
+        StartCoroutine(this.CreateBlueMinion());
+        StartCoroutine(this.CreateRedMinion());
 
     }
 
-    IEnumerator GoMinion()
+    IEnumerator CreateBlueMinion()
     {
         
-        //int minionCount = (int)GameObject.FindGameObjectsWithTag("Minion_Blue").Length;
-        //Debug.Log("에너미카운트!!!"+ minionCount);
-        //if (minionCount < maxMinionPool)
-        //{
-        //    yield return new WaitForSeconds(createTime);
-
-        //    //var _enemy = GetMinion(); //참조복사 /클래스의 인스턴스끼리 대입연산을 하면 레퍼런스카피가 일어난다.
-        //    //_enemy.SetActive(true);
-
-        //    // Instantiate(enemy, points[idx].position, points[idx].rotation);
-        //}
-
-
-
+        //태그말고 레이어로 찾고싶은데 모르겠다....
+        int minionCount = (int)GameObject.FindGameObjectsWithTag("Minion_Blue").Length;
+        Debug.Log("블루 에너미카운트!:" + minionCount);
+        if (minionCount < maxMinionPool)
+        {
+            yield return new WaitForSeconds(createTime);
+        }
         yield return null;
     }
+
+    IEnumerator CreateRedMinion()
+    {
+
+        int minionCount = (int)GameObject.FindGameObjectsWithTag("Minion_Blue").Length;
+        Debug.Log("레드 에너미카운트!:" + minionCount);
+        if (minionCount < maxMinionPool)
+        {
+            yield return new WaitForSeconds(createTime);
+        }
+        yield return null;
+    }
+
+
+
+
     public GameObject GetBlueMinion()
     {
         for (int i = 0; i < BluePool.Count; i++)
@@ -96,7 +106,7 @@ public class TowerMgr : MonoBehaviour {
         for (int i = 0; i < maxMinionPool; i++)
         {
             var obj = Instantiate<GameObject>(MinionPrefabRed, RedMinionPools.transform);
-            obj.name = "Minion_" + i.ToString("00");
+            obj.name = "RedMinion_" + i.ToString("00");
             obj.SetActive(false);
             RedPool.Add(obj);
         }
@@ -104,7 +114,7 @@ public class TowerMgr : MonoBehaviour {
         for (int i = 0; i < maxMinionPool; i++)
         {
             var obj = Instantiate<GameObject>(MinionPrefabBlue, BlueMinionPools.transform);
-            obj.name = "Minion_" + i.ToString("00");
+            obj.name = "BlueMinion_" + i.ToString("00");
             obj.SetActive(false);
             BluePool.Add(obj);
         }

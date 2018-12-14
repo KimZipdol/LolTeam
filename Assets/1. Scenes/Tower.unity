@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  hpBarPrefab: {fileID: 1408068461}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  hpBarPrefab: {fileID: 1408068461}
 --- !u!1001 &921548075
 Prefab:
   m_ObjectHideFlags: 0
@@ -785,7 +787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100048, guid: 272ec112bddec644a8af6599107e74f7, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Minion_Blue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272ec112bddec644a8af6599107e74f7, type: 2}
@@ -1730,6 +1732,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
   m_IsPrefabAsset: 0
@@ -1780,6 +1786,10 @@ Prefab:
     - target: {fileID: 1285286863353818, guid: fb4c47d38714ad64c91fa474dafe1e0c, type: 2}
       propertyPath: m_Name
       value: "Bullet(\uD14C\uC2A4\uD2B8\uC6A9)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1285286863353818, guid: fb4c47d38714ad64c91fa474dafe1e0c, type: 2}
+      propertyPath: m_TagString
+      value: BULLET
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb4c47d38714ad64c91fa474dafe1e0c, type: 2}
