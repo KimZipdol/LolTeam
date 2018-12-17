@@ -2,18 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MinionState { IDLE, TRACE, ATTACK, DIE }
 public class MinionAI : MonoBehaviour {
 
-    public enum State { IDLE, TRACE, ATTACK, DIE}
-    public State _state = State.IDLE;
+    public MinionState state = MinionState.IDLE;
     public bool isDie = false;
 
+    void Update() {
+        switch (state)
+        {
+            case MinionState.IDLE:
 
-    void Start () {
-		
-	}
+                break;
+            case MinionState.TRACE:
 
-	void Update () {
-		
-	}
+
+                break;
+            case MinionState.ATTACK:
+
+
+                break;
+            case MinionState.DIE:
+
+
+                break;
+        }
+    }	
 }

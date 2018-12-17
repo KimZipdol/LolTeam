@@ -21,8 +21,8 @@ public class Minion_red : Unit {
     private void Start()
     {
         tr = GetComponent<Transform>();
-        HpSprite = Instantiate(Gamemanager.Instance.EnemyHpPrefeb) as RectTransform;
-        HpSprite.SetParent(GameObject.Find("EnemyHp_Canvas").transform);
+        //HpSprite = Instantiate(Gamemanager.Instance.EnemyHpPrefeb) as RectTransform;
+        //HpSprite.SetParent(GameObject.Find("EnemyHp_Canvas").transform);
         FirstRot = tr.rotation;
         
     }

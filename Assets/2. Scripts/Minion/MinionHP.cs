@@ -24,8 +24,8 @@ public class MinionHP : MonoBehaviour
 
     void SetHpBar()
     {
-        uiCanvas = GameObject.Find("UI Canvas").GetComponent<Canvas>();
-        hpBar = Instantiate<GameObject>(hpBarPrefab, uiCanvas.transform);
+        //uiCanvas = GameObject.Find("UI Canvas").GetComponent<Canvas>();
+ //       hpBar = Instantiate<GameObject>(hpBarPrefab, uiCanvas.transform);
         //hpBarImage = hpBar.GetComponentsInChildren<Image>()[1];//0번방에는 까만색 
         //var _hpBar = hpBar.GetComponent<EnemyHpBar>();
         //_hpBar.targetTr = this.gameObject.transform;
@@ -62,10 +62,10 @@ public class MinionHP : MonoBehaviour
             //Destroy(coll.gameObject);
             coll.gameObject.SetActive(false);
             //hp -= coll.gameObject.GetComponent<BulletCtrl>().damage;
-            hpBarImage.fillAmount = hp / initHp; //현재 깎인 hp를 초기hp로 나누면 그만큼만 채워서 보여줘
+ //          hpBarImage.fillAmount = hp / initHp; //현재 깎인 hp를 초기hp로 나누면 그만큼만 채워서 보여줘
             if (hp <= 0.0f)
             {
-                GetComponent<MinionAI>()._state = MinionAI.State.DIE;
+                GetComponent<MinionAI>().state = MinionState.DIE;
                 hpBarImage.GetComponentsInParent<Image>()[1].color = Color.clear;
                 //clear는 (0,0,0,0) 완전 투명하게 된다.
                 GetComponent<CapsuleCollider>().enabled = false;

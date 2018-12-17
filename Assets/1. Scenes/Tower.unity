@@ -239,7 +239,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220934539561716, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
@@ -304,7 +312,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
@@ -355,7 +367,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 391673113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9794781e9ebb0d44878d6527ae88f63, type: 3}
   m_Name: 
@@ -584,7 +596,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220934539561716, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
@@ -628,24 +648,45 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-        type: 2}
-      propertyPath: whatIsMinion.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-        type: 2}
-      propertyPath: minionColor.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-        type: 2}
-      propertyPath: targetMinionColor.m_Bits
-      value: 512
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324814199275758, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376981302242592, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842193587575808, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261466886682798, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865945422550538, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550963746240538, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534010183788982, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667608097733624, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
@@ -661,7 +702,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747465024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9794781e9ebb0d44878d6527ae88f63, type: 3}
   m_Name: 
@@ -733,7 +774,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220934539561716, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
@@ -841,27 +890,12 @@ Prefab:
       value: Tower_Red Nexus
       objectReference: {fileID: 0}
     - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
-      propertyPath: m_TagString
-      value: Nexus_Red
-      objectReference: {fileID: 0}
-    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
-        type: 2}
-      propertyPath: whatIsMinion.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
-        type: 2}
-      propertyPath: minionColor.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 114899751900662786, guid: 78487cc489b183a4b9a46e657c2b3e11,
-        type: 2}
-      propertyPath: targetMinionColor.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220934539561716, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
@@ -1156,7 +1190,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
@@ -1303,28 +1341,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b97c91e8b348f3f4ebdc11f5c82182cd, type: 3}
   - {fileID: 21300000, guid: 0e123cfdc54a3ca4684816a34167a566, type: 3}
   - {fileID: 21300000, guid: b8fb302c5768e334ca82005f50e58121, type: 3}
---- !u!1 &1841405548 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-    type: 2}
-  m_PrefabInternal: {fileID: 2050557555}
 --- !u!4 &1841405549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4558868516413710, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
     type: 2}
   m_PrefabInternal: {fileID: 2050557555}
---- !u!114 &1841405553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1841405548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 135b5299043925548a0c92e589b852fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMinionReady: 0
 --- !u!1001 &1928808457
 Prefab:
   m_ObjectHideFlags: 0
@@ -1381,7 +1402,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220934539561716, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983105594257720, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78487cc489b183a4b9a46e657c2b3e11, type: 2}
@@ -1446,7 +1475,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
@@ -1503,34 +1536,6 @@ Prefab:
     - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
       propertyPath: m_Name
       value: Tower_Blue Nexus
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
-      propertyPath: m_TagString
-      value: Nexus_Blue
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 4558868516413710, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-        type: 2}
-    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-        type: 2}
-      propertyPath: whatIsMinion.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-        type: 2}
-      propertyPath: minionColor.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980350107343068, guid: 7a6cbd0710f708443b7a4e8a0ee8b485,
-        type: 2}
-      propertyPath: targetMinionColor.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239757732640502, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cbd0710f708443b7a4e8a0ee8b485, type: 2}
@@ -1701,7 +1706,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -12.47
+      value: -22.17
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 2}
       propertyPath: m_LocalRotation.x
