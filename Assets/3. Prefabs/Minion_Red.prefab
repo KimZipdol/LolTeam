@@ -389,11 +389,10 @@ GameObject:
   - component: {fileID: 400050}
   - component: {fileID: 9500000}
   - component: {fileID: 136283137079144268}
-  - component: {fileID: 54192537095513444}
   - component: {fileID: 195846778533343582}
   - component: {fileID: 114304354173220966}
   - component: {fileID: 114202008115641732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Minion_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +753,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 115.38, y: 4.02, z: 103.37}
+  m_LocalPosition: {x: 0, y: 0, z: -9.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400048}
@@ -904,21 +903,6 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100050}
   m_IsPrefabAsset: 1
---- !u!54 &54192537095513444
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100050}
-  serializedVersion: 2
-  m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
 --- !u!65 &65359034053041662
 BoxCollider:
   m_ObjectHideFlags: 1

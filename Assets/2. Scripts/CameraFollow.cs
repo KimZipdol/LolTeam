@@ -113,7 +113,10 @@ public class CameraFollow : MonoBehaviour {
         }
 
         
+<<<<<<< HEAD
         //mapCameraland.anchoredPosition = new Vector2(transform.position.x-125, transform.position.z-125);
+=======
+>>>>>>> tower
         mapCameraland.anchoredPosition = new Vector2(transform.position.x, transform.position.z);
 
 
