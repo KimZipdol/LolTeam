@@ -1,0 +1,2 @@
+D:\유니티관련\프로젝트\LOLMZ\LolTeam\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\유니티관련\프로젝트\LOLMZ\LolTeam\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
