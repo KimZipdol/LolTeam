@@ -8,6 +8,10 @@ TagManager:
   - BULLET
   - map
   - Red_Minion_Weapon
+  - Nexus_Blue
+  - Nexus_Red
+  - Minion_Blue
+  - Minion_Red
   layers:
   - Default
   - TransparentFX
@@ -17,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - 
+  - Minion_Blue
+  - Minion_Red
   - 
   - 
   - 
