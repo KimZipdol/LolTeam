@@ -28,8 +28,9 @@ public class Skills : MonoBehaviour
     public Picking _picking;
 
 	[Header("Object Pool")]
-	public GameObject QExpEffect;
+	public GameObject ExpEffect;
     public GameObject RTargetMark;
+    public GameObject RThrow;
 
     private int SkillPoint = 1;
     private float passiveCool = 12.0f;
@@ -37,7 +38,6 @@ public class Skills : MonoBehaviour
 	private float QCooltime = 5.0f;
 	private float QTime = 5.0f;
 	private int HashQERATK = Animator.StringToHash("QERATK");
-	private GameObject ExpEffect;
 	private float qDamage;
 	private int qLvl = 1;
     private float qRange = 8.5f;
@@ -48,13 +48,17 @@ public class Skills : MonoBehaviour
 	private int wLvl = 0;
 	private bool isRolling = false;
     private float moved = 0.0f;
-    private float rDamageClose;
-    private float rDamageGeneral;
+    public float rDamageClose;
+    public float rDamageGeneral;
     private float rRadius = 4.0f;
     private float rCoolTime = 120.0f;
     private float rTime = 120.0f;
     private float rRange = /*53티모미터 = 53 * 1.5미터 = 79.5미터*/79.5f;
     private int rLvl = 1;
+    public GameObject _rThrow;
+    public GameObject _rTarget;
+    private char usingSkill;
+    public Color targetMarkColor;
 
     private float QFillAmount = 0;
     private float WFillAmount = 0;
@@ -70,11 +74,20 @@ public class Skills : MonoBehaviour
 	{
 		GameObject effectPools = new GameObject("EffectPools");
 
-		var obj = Instantiate<GameObject>(QExpEffect, effectPools.transform);
+		var obj = Instantiate<GameObject>(ExpEffect, effectPools.transform);
 		obj.name = "ExpEffect";
 		obj.SetActive(false);
 		ExpEffect = obj;
-		SetSkillDmg();
+        obj = Instantiate<GameObject>(RThrow, effectPools.transform);
+        obj.name = "RThrow";
+        obj.SetActive(false);
+        _rThrow = obj;
+        obj = Instantiate<GameObject>(RTargetMark, effectPools.transform);
+        obj.name = "RTarget";
+        obj.SetActive(false);
+        _rTarget = obj;
+        targetMarkColor = _rTarget.GetComponent<MeshRenderer>().material.color;
+        SetSkillDmg();
 	}
 
 	private void Update()
@@ -115,8 +128,18 @@ public class Skills : MonoBehaviour
             //_picking._isMove = false;
             //StartCoroutine(RSkill());
             //StartCoroutine(RImgCool());
-
             ShowSkillRange(rRange);
+        }
+
+
+        if (Input.GetButtonUp("RSkill") && usingSkill == 'r')
+        {
+            Debug.Log("R Up");
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit _hit;
+            Physics.Raycast(ray, out _hit, Mathf.Infinity);
+            usingSkill = ' ';
+            StartCoroutine(RSkill(_hit.point));
         }
     }
 
@@ -124,26 +147,26 @@ public class Skills : MonoBehaviour
     {
         SkillRangeBound.transform.localScale = Vector3.one * range * 0.65f; //0.65를 곱해야 사거리 1로 보이므로...
         SkillRangeBound.SetActive(true);
-
         //이후 WE스킬 추가예정.
         if (range >= rRange*0.99)
         {
-            RTargetMark.transform.localScale = Vector3.one * rRange * 2.6f; //위와 동일.
+            _rTarget.transform.localScale = Vector3.one * rRadius * 2.6f; //위와 동일.
+            usingSkill = 'r';
         }
         else if(range >= qRange * 0.99)
         {
-            RTargetMark.transform.localScale = Vector3.one * qRange * 2.6f; //위와 동일.
+            _rTarget.transform.localScale = Vector3.one * qRange * 2.6f; //위와 동일.
+            usingSkill = 'q';
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
         if(Physics.Raycast(ray, out _hit, Mathf.Infinity))
         {
-            RTargetMark.transform.position = _hit.point;
+            _rTarget.transform.position = new Vector3(_hit.point.x, 0.2f, _hit.point.z);
         }
-                
-        RTargetMark.SetActive(true);
-        
+
+        _rTarget.SetActive(true);
     }
 
 	void OnStatChange(float newAP, float newAD)
@@ -209,7 +232,6 @@ public class Skills : MonoBehaviour
 
             SkillTimes1 -= Time.deltaTime*5;
             QFillAmount = SkillTimes1/5;
-            Debug.Log(QFillAmount);
             if (QFillAmount <= 0.0f)
             {
                 QCoolText.gameObject.SetActive(false);
@@ -298,7 +320,6 @@ public class Skills : MonoBehaviour
 
             SkillTimes2 -= Time.deltaTime * 5;
             WFillAmount = SkillTimes2 / 5;
-            Debug.Log(WFillAmount);
             if (WFillAmount <= 0.0f)
             {
                 WCoolText.gameObject.SetActive(false);
@@ -323,7 +344,6 @@ public class Skills : MonoBehaviour
 
             SkillTimes1 -= Time.deltaTime * 5;
             RFillAmount = SkillTimes1 / 5;
-            Debug.Log(RFillAmount);
             if (RFillAmount <= 0.0f)
             {
                 RCoolText.gameObject.SetActive(false);
@@ -335,44 +355,28 @@ public class Skills : MonoBehaviour
 
 
 
-    IEnumerator RSkill()
+    IEnumerator RSkill(Vector3 _hit)  //쿨타임체크 + 사거리체크 + 타겟포지션 선정.
     {
-        RFillAmount = 1;
-        RCoolImage.fillAmount = QFillAmount;
-
-
-        rTime = 0.0f;
-        _Anim.SetTrigger(HashQERATK);
-        ExpEffect.SetActive(true);
-        RCoolText.gameObject.SetActive(true);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit _hit;
-        if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
+        if ((_hit - transform.position).magnitude > rRange)
         {
-            ExpEffect.transform.position = _hit.point;
-            ExpEffect.transform.localScale = Vector3.one * QRadius;
-        }
-
-        if((_hit.point - transform.position).magnitude>rRange)
-        {
+            Debug.Log("range out");
             OutOfRange();
             yield break;
         }
+        RFillAmount = 1;
+        RCoolImage.fillAmount = QFillAmount;
+        rTime = 0.0f;
+        _Anim.SetTrigger(HashQERATK);
+        RCoolText.gameObject.SetActive(true);
+        ExpEffect.transform.position = _hit;
+        ExpEffect.transform.localScale = Vector3.one * QRadius;
+        _rTarget.transform.position = _hit;
+        targetMarkColor = new Color(0f, 0f, 0f, 1f);
 
-        Quaternion rRot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
+        Quaternion rRot = Quaternion.LookRotation(_hit - _Player.transform.position);
         _Player.transform.rotation = rRot;
-        //원의 중앙에서 먼 적에게는 General데미지만, 가까운 적에게는 General+Close데미지(가급적 수치를 합쳐서 보낼 수 있게 해보자).
-        Collider[] colls = Physics.OverlapSphere(ExpEffect.transform.position, rRadius / 2);
-        foreach (var item in colls)
-        {
-            if (item.gameObject.layer == 9)
-            {
-                item.SendMessage("GetDamage", rDamageGeneral, SendMessageOptions.RequireReceiver);
-            }
-        }
-        //해야 할 것 
-        yield return new WaitForSeconds(1.3f);
-        ExpEffect.SetActive(false);
+        _rThrow.transform.position = _Player.transform.position;
+        _rThrow.SetActive(true);
+        yield return null;
     }
-
 }
