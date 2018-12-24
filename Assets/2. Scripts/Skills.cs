@@ -319,10 +319,10 @@ public class Skills : MonoBehaviour
 
             SkillTimes1 -= Time.deltaTime * 5;
             RFillAmount = SkillTimes1 / 5;
-            Debug.Log(QFillAmount);
-            if (QFillAmount <= 0.0f)
+            Debug.Log(RFillAmount);
+            if (RFillAmount <= 0.0f)
             {
-                QCoolText.gameObject.SetActive(false);
+                RCoolText.gameObject.SetActive(false);
                 break;
             }
             yield return null;
@@ -340,7 +340,7 @@ public class Skills : MonoBehaviour
         rTime = 0.0f;
         _Anim.SetTrigger(HashQERATK);
         ExpEffect.SetActive(true);
-        QCoolText.gameObject.SetActive(true);
+        RCoolText.gameObject.SetActive(true);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
         if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
