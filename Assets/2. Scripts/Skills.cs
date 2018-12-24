@@ -126,10 +126,14 @@ public class Skills : MonoBehaviour
         SkillRangeBound.SetActive(true);
 
         //이후 WE스킬 추가예정.
-        if (range == rRange)
+        if (range >= rRange*0.99)
+        {
             RTargetMark.transform.localScale = Vector3.one * rRange * 2.6f; //위와 동일.
-        else(range==qRange)
+        }
+        else if(range >= qRange * 0.99)
+        {
             RTargetMark.transform.localScale = Vector3.one * qRange * 2.6f; //위와 동일.
+        }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;

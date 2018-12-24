@@ -3,7 +3,7 @@
     <Files>
       <File FileName="Assets/2. Scripts/ItemDatabase.cs" Line="42" Column="60" />
       <File FileName="Assets/2. Scripts/BasicAtk.cs" Line="105" Column="72" />
-      <File FileName="Assets/2. Scripts/Skills.cs" Line="127" Column="9" />
+      <File FileName="Assets/2. Scripts/Skills.cs" Line="136" Column="10" />
       <File FileName="Assets/2. Scripts/UnityStat.cs" Line="23" Column="34" />
       <File FileName="Assets/2. Scripts/Sandbag.cs" Line="40" Column="20" />
       <File FileName="Assets/2. Scripts/Unit.cs" Line="46" Column="29" />
