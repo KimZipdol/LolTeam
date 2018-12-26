@@ -75,6 +75,7 @@
     <Compile Include="Assets\2. Scripts\Picking.cs" />
     <Compile Include="Assets\2. Scripts\PickingObj.cs" />
     <Compile Include="Assets\2. Scripts\PlayerController.cs" />
+    <Compile Include="Assets\2. Scripts\RThrow.cs" />
     <Compile Include="Assets\2. Scripts\Skills.cs" />
     <Compile Include="Assets\2. Scripts\Tower_yeon\BlueNexus.cs" />
     <Compile Include="Assets\2. Scripts\Tower_yeon\Bullet.cs" />
