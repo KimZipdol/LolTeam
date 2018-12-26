@@ -121,7 +121,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 1
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1
@@ -174,7 +174,7 @@ TrailRenderer:
     alignment: 0
     textureMode: 0
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.3
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!114 &114834995395977218
@@ -188,9 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8d7681b40fe3349ae587bb039738cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExpEffect: {fileID: 0}
   expRadius: 0
   _skills: {fileID: 0}
+  flySpd: 10
   g: 19.8
   max_height: 20
   tpos: {x: 0, y: 0, z: 0}

@@ -34,7 +34,7 @@ public class Skills : MonoBehaviour
 
     private int SkillPoint = 1;
     private float passiveCool = 12.0f;
-    private float QRadius = 3.0f;
+    private float qRadius = 3.0f;
 	private float QCooltime = 5.0f;
 	private float QTime = 5.0f;
 	private int HashQERATK = Animator.StringToHash("QERATK");
@@ -123,12 +123,19 @@ public class Skills : MonoBehaviour
 
         }
 
-        if (Input.GetButton("RSkill") && RFillAmount <= 0)
+        if (Input.GetButton("RSkill"))
         {
-            //_picking._isMove = false;
-            //StartCoroutine(RSkill());
-            //StartCoroutine(RImgCool());
-            ShowSkillRange(rRange);
+            if(RFillAmount >= 0.01f)
+            {
+                Debug.Log("Cooltime out");
+            }
+            else
+            {
+                //_picking._isMove = false;
+                //StartCoroutine(RSkill());
+                StartCoroutine(RImgCool());
+                ShowSkillRange(rRange);
+            }
         }
 
 
@@ -139,6 +146,7 @@ public class Skills : MonoBehaviour
             RaycastHit _hit;
             Physics.Raycast(ray, out _hit, Mathf.Infinity);
             usingSkill = ' ';
+            SkillRangeBound.SetActive(false);
             StartCoroutine(RSkill(_hit.point));
         }
     }
@@ -155,13 +163,13 @@ public class Skills : MonoBehaviour
         }
         else if(range >= qRange * 0.99)
         {
-            _rTarget.transform.localScale = Vector3.one * qRange * 2.6f; //위와 동일.
+            _rTarget.transform.localScale = Vector3.one * qRadius * 2.6f; //위와 동일.
             usingSkill = 'q';
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
-        if(Physics.Raycast(ray, out _hit, Mathf.Infinity))
+        if(Physics.Raycast(ray, out _hit, Mathf.Infinity, 10))
         {
             _rTarget.transform.position = new Vector3(_hit.point.x, 0.2f, _hit.point.z);
         }
@@ -257,14 +265,14 @@ public class Skills : MonoBehaviour
 		QCoolText.gameObject.SetActive(true);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
-        if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out _hit, Mathf.Infinity, 10))
         {
             ExpEffect.transform.position = _hit.point;
-            ExpEffect.transform.localScale = Vector3.one * QRadius;
+            ExpEffect.transform.localScale = Vector3.one * qRadius;
         }
         Quaternion qRot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
         _Player.transform.rotation = Quaternion.Slerp(_Player.transform.rotation, qRot, Time.deltaTime * 100.0f);
-        Collider[] colls = Physics.OverlapSphere(ExpEffect.transform.position, QRadius/2);
+        Collider[] colls = Physics.OverlapSphere(ExpEffect.transform.position, qRadius/2);
         foreach (var item in colls)
         {
 			if(item.gameObject.layer==9)
@@ -293,7 +301,7 @@ public class Skills : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
         Quaternion rot;
-        if (Physics.Raycast(ray, out _hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out _hit, Mathf.Infinity, 10))
         {
             rot = Quaternion.LookRotation(_hit.point - _Player.transform.position);
         }
@@ -332,19 +340,19 @@ public class Skills : MonoBehaviour
     IEnumerator RImgCool()
     {
         RFillAmount = 1;
-        SkillTimes1 = rCoolTime;
+        SkillTimes4 = rCoolTime;
 
-        QCoolText.gameObject.SetActive(true);
+        RCoolText.gameObject.SetActive(true);
         while (true)
         {
 
             yield return new WaitForSeconds(0.02f);
-            RCoolText.text = (SkillTimes1).ToString("0.0") + 's';
+            RCoolText.text = (SkillTimes4).ToString("0.0") + 's';
             RCoolImage.fillAmount = RFillAmount;
 
-            SkillTimes1 -= Time.deltaTime * 5;
-            RFillAmount = SkillTimes1 / 5;
-            if (RFillAmount <= 0.0f)
+            SkillTimes4 -= Time.deltaTime * 5;
+            RFillAmount = SkillTimes4 / 5;
+            if (RFillAmount <= 0.01f)
             {
                 RCoolText.gameObject.SetActive(false);
                 break;
@@ -359,17 +367,16 @@ public class Skills : MonoBehaviour
     {
         if ((_hit - transform.position).magnitude > rRange)
         {
-            Debug.Log("range out");
             OutOfRange();
             yield break;
         }
         RFillAmount = 1;
-        RCoolImage.fillAmount = QFillAmount;
+        RCoolImage.fillAmount = RFillAmount;
         rTime = 0.0f;
         _Anim.SetTrigger(HashQERATK);
         RCoolText.gameObject.SetActive(true);
         ExpEffect.transform.position = _hit;
-        ExpEffect.transform.localScale = Vector3.one * QRadius;
+        ExpEffect.transform.localScale = Vector3.one * rRadius;
         _rTarget.transform.position = _hit;
         targetMarkColor = new Color(0f, 0f, 0f, 1f);
 

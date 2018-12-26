@@ -7,6 +7,7 @@ public class RThrow : MonoBehaviour
     public float expRadius;
     //TODO : Skills에서 타겟포인트, 데미지 가져오기.
     public Skills _skills;
+    public float flySpd;
 
     #region 포물선운동
     //이동할 벡터의 xyz
@@ -84,7 +85,7 @@ public class RThrow : MonoBehaviour
         while (true)
         {
 
-            elapsed_time += Time.deltaTime;
+            elapsed_time += Time.deltaTime * flySpd;
 
             //매프레임당 이동벡터의 x
             var tx = start_pos.x + this.tx * elapsed_time;
