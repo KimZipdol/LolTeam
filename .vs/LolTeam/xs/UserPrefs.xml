@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{617C3D5B-AD34-18AB-C9DD-7A67E7AF3CA4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2. Scripts/Skills.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2. Scripts/BasicAtk.cs">
     <Files>
       <File FileName="Assets/2. Scripts/ItemDatabase.cs" Line="42" Column="60" />
-      <File FileName="Assets/2. Scripts/BasicAtk.cs" Line="105" Column="72" />
-      <File FileName="Assets/2. Scripts/Skills.cs" Line="136" Column="10" />
-      <File FileName="Assets/2. Scripts/UnityStat.cs" Line="23" Column="34" />
+      <File FileName="Assets/2. Scripts/BasicAtk.cs" Line="31" Column="51" />
+      <File FileName="Assets/2. Scripts/Skills.cs" Line="185" Column="3" />
+      <File FileName="Assets/2. Scripts/UnityStat.cs" Line="41" Column="36" />
       <File FileName="Assets/2. Scripts/Sandbag.cs" Line="40" Column="20" />
       <File FileName="Assets/2. Scripts/Unit.cs" Line="46" Column="29" />
-      <File FileName="Assets/2. Scripts/PlayerController.cs" Line="7" Column="37" />
+      <File FileName="Assets/2. Scripts/PlayerController.cs" Line="37" Column="51" />
       <File FileName="Assets/2. Scripts/BasicAtkThrow.cs" Line="1" Column="1" />
+      <File FileName="Assets/2. Scripts/CameraFollow.cs" Line="119" Column="3" />
+      <File FileName="Assets/2. Scripts/Minion/Minion_red.cs" Line="19" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

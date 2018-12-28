@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4388868335779224}
   - component: {fileID: 33539966373482696}
   - component: {fileID: 23906808375785902}
-  - component: {fileID: 114834995395977218}
   - component: {fileID: 96337815795296930}
+  - component: {fileID: 114122890138821302}
   m_Layer: 0
   m_Name: RThrow
   m_TagString: Untagged
@@ -177,7 +177,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.3
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &114834995395977218
+--- !u!114 &114122890138821302
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,10 +185,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310212232569670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c8d7681b40fe3349ae587bb039738cd, type: 3}
+  m_Script: {fileID: 11500000, guid: b243d7300e97d8b4e819133e76106af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expRadius: 0
+  expRadius: 5
   _skills: {fileID: 0}
   flySpd: 10
   g: 19.8

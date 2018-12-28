@@ -16,6 +16,7 @@ public class UnityStat : MonoBehaviour {
     //롤 캐릭터 '직스'의 스탯을 가져옴. 상황에 맞게 수정해야함.
     float currHp;
     float currMp;
+    public int level = 1;
     public float initHp = 536.0f;
     private float hpGrowth = 92.0f;
     public float initMp = 480.0f;
@@ -37,6 +38,7 @@ public class UnityStat : MonoBehaviour {
     //엔진 에디터에 맞게 공격속도와 사거리 수정 필요.
     private float moveSpd = 325.0f;
     private float atkRange = 550.0f;
+    public float abillityPower = 0;
 
 
     private void Start()

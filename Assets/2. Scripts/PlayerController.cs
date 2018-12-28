@@ -34,7 +34,7 @@ public class PlayerController : Unit
     private void Update()
     {
         //경험치바 게이지가 꽉 차 있다면 
-        if (Gamemanager.Instance.Expslider.value == 1)
+        if (Gamemanager.Instance.Expslider.value >= 1)
         {
             PlayerExpReset();
         }
