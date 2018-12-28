@@ -35,6 +35,7 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
+
         //Time.deltaTime은 직전의 Update와 현재 Update 실행 시점 사이의 시간 간격
         timeAfterCreate = timeAfterCreate + Time.deltaTime;
         // 누적된 시간이 생성 주기보다 크거나 같다
@@ -59,6 +60,7 @@ public class Tower : MonoBehaviour
             yield return new WaitForSeconds(0.02f); //타워 상태변화 하는데 걸리는 최소시간
 
             Collider[] colls = Physics.OverlapSphere(transform.position, attckRadius, targetMinionColor);
+
             foreach (var item in colls)
             {
                 //Debug.Log(item.name);
@@ -75,7 +77,7 @@ public class Tower : MonoBehaviour
                     target = item.transform;
 
                 }
-                else  //2명 이상 들어오면 (타겟-미니언)간의 거리들을 비교해서 배열 순서를 재배치해야함
+                else  //2명 이상  (타겟-미니언)간의 거리들을 비교해서 배열 순서를 재배치해야함
                 {
                     //i) 동시에 들어올경우
                     if (target == null)

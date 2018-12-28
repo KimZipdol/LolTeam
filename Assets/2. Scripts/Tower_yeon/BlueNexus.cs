@@ -30,7 +30,7 @@ public class BlueNexus : MonoBehaviour
     public void MinionReady()
     {
 
-        var blueMinion = TowerMgr.instance.GetBlueMinion(); //참조복사 /클래스의 인스턴스끼리 대입연산 하면 레퍼런스카피 일어남
+        var blueMinion = TowerMgr.instance.GetMinion(true ); //참조복사 /클래스의 인스턴스끼리 대입연산 하면 레퍼런스카피 일어남
         blueMinion.transform.position = transform.position;
         blueMinion.SetActive(true);
     }

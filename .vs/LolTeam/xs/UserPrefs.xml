@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{617C3D5B-AD34-18AB-C9DD-7A67E7AF3CA4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2. Scripts/BasicAtk.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2. Scripts/Tower_yeon/TowerMgr.cs">
     <Files>
       <File FileName="Assets/2. Scripts/ItemDatabase.cs" Line="42" Column="60" />
       <File FileName="Assets/2. Scripts/BasicAtk.cs" Line="31" Column="51" />
-      <File FileName="Assets/2. Scripts/Skills.cs" Line="185" Column="3" />
+      <File FileName="Assets/2. Scripts/Skills.cs" Line="227" Column="4" />
+      <File FileName="Assets/2. Scripts/RThrow.cs" Line="35" Column="71" />
       <File FileName="Assets/2. Scripts/UnityStat.cs" Line="41" Column="36" />
       <File FileName="Assets/2. Scripts/Sandbag.cs" Line="40" Column="20" />
       <File FileName="Assets/2. Scripts/Unit.cs" Line="46" Column="29" />
@@ -11,6 +12,11 @@
       <File FileName="Assets/2. Scripts/BasicAtkThrow.cs" Line="1" Column="1" />
       <File FileName="Assets/2. Scripts/CameraFollow.cs" Line="119" Column="3" />
       <File FileName="Assets/2. Scripts/Minion/Minion_red.cs" Line="19" Column="11" />
+      <File FileName="Assets/2. Scripts/Tower_yeon/TowerMgr.cs" Line="99" Column="14" />
+      <File FileName="Assets/2. Scripts/Tower_yeon/Tower.cs" Line="80" Column="31" />
+      <File FileName="Assets/2. Scripts/Tower_yeon/ShowHpBar.cs" Line="1" Column="1" />
+      <File FileName="Assets/2. Scripts/Tower_yeon/Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/2. Scripts/Tower_yeon/BlueNexus.cs" Line="16" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
